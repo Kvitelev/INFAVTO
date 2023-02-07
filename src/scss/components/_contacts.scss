@@ -1,0 +1,106 @@
+.contacts__title {
+  @include margin-bottom-50;
+  &-second {
+    margin-bottom: 5px;
+  }
+}
+
+.contacts__list {
+  text-align: center;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.contacts__item {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include desktop {
+    &:nth-child(2) {
+      order: 1;
+    }
+    &:nth-child(3) {
+      padding-top: 100px;
+    }
+  }
+}
+
+.contacts__tel {
+  @include flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.contacts__link {
+  display: block;
+  margin: auto;
+  width: 280px;
+  color: $orange;
+  &:hover {
+    @include opacity-7;
+  }
+  &:active {
+    opacity: 0.3;
+  }
+  @include desktop {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.wrap {
+  position: relative;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100px;
+  @include bg-cover;
+  background-image: url(../img/paterns/triangle.png);
+  @include desktop {
+    min-height: 150px;
+  }
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include bg-cover;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/svg/marker.svg);
+  background-size: 30px 30px;
+  @include tablet {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
+}
+
+.contacts__map {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 100%;
+  min-height: 200px;
+  @include tablet {
+    min-height: 400px;
+  }
+  @include desktop {
+    min-height: 500px;
+  }
+}
+
+

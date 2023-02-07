@@ -1,0 +1,93 @@
+.about-us {
+  @include margin-bottom-50;
+  @include tablet {
+    @include margin-bottom-100;
+  }
+}
+
+.about-us__title {
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 100px;
+  }
+}
+
+.about-us__list {
+  @include flex-all-center;
+  flex-direction: column;
+  row-gap: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  @include desktop {
+    gap: 50px;
+  }
+}
+
+.about-us__item {
+  width: 250px;
+  min-height: 250px;
+  border-radius: 10px;
+  border: 2px solid $orange;
+  background: linear-gradient(137deg, #303134 0%, #282828 47%, #282828 100%);
+  padding: 10px;
+  @include tablet {
+    width: 350px;
+    min-height: 350px;
+    padding: 20px;
+  }
+}
+
+.about-us__content {
+  @include flex-all-sb;
+  flex-direction: column;
+  min-height: 220px;
+  &--icon-1 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-1.svg);
+  }
+  &--icon-2 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-2.svg);
+  }
+  &--icon-3 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-3.svg);
+  }
+  &--icon-4 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-4.svg);
+  }
+  &--icon-5 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-5.svg);
+  }
+  &--icon-6 {
+    @include bg-cover;
+    background-image: url(../img/svg/about-us-6.svg);
+  }
+
+  &--icon-1,
+  &--icon-2,
+  &--icon-3,
+  &--icon-4,
+  &--icon-5,
+  &--icon-6 {
+    background-size: 80px 80px;
+  }
+  @include tablet {
+    min-height: 300px;
+    &--icon-1,
+    &--icon-2,
+    &--icon-3,
+    &--icon-4,
+    &--icon-5,
+    &--icon-6 {
+      background-size: 100px 100px;
+    }
+  }
+}

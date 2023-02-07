@@ -1,0 +1,53 @@
+.сar-insurance {
+  @include margin-bottom-50;
+}
+
+.сar-insurance__title {
+  @include margin-bottom-20;
+  @include tablet {
+    @include margin-bottom-50;
+  }
+}
+
+.сar-insurance__content {
+  @include margin-bottom-20;
+  @include tablet {
+    @include margin-bottom-50;
+  }
+}
+
+.сar-insurance__description {
+  @include margin-bottom-20;
+  @include tablet {
+    width: 700px;
+  }
+  @include desktop {
+    width: 900px;
+  }
+}
+
+.сar-insurance__flex {
+  @include flex;
+  flex-direction: column;
+  row-gap: 5px;
+  color: $orange;
+  margin-bottom: 10px;
+}
+
+.сar-insurance__tel {
+  &:hover {
+    @include opacity-7;
+  }
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.сar-insurance__link {
+  max-width: 100%;
+  min-height: 40px;
+  @include tablet {
+    max-width: 200px;
+    min-height: 50px;
+  }
+}

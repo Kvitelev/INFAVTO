@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  &:hover {
+    transition: all 0.3s;
+  }
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.page {
+  font-family: 'GG-Wolfram';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: $background;
+  color: $white;
+  overflow-x: hidden;
+  @include tablet {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include tablet {
+    max-width: 834px;
+    padding: 0 50px;
+  }
+  @include desktop {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  border: 2px solid $orange;
+  border-radius: 30px;
+  background-color: rgba($orange-light, 0.1);
+  color: $white;
+  &:hover {
+    background-color: transparent;
+  }
+  &:active {
+    color: $orange;
+    background-color: transparent;
+  }
+  &:active .link-icon {
+    fill: $orange;
+  }
+}
+
+.btn-link {
+  @include flex-all-center;
+  max-width: 150px;
+  min-height: 30px;
+  @include tablet {
+    min-height: 50px;
+  }
+  @include desktop {
+    max-width: 200px;
+  }
+}
+
+.link-icon {
+  width: 10px;
+  height: 10px;
+  fill: $white;
+  margin-left: 5px;
+  @include tablet {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.title {
+  margin: 0;
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+  @include tablet {
+    font-size: 35px;
+    line-height: 48px;
+  }
+  @include desktop {
+    font-size: 48px;
+    line-height: 57px;
+  }
+  &-second {
+    margin: 0;
+    font-size: 20px;
+    line-height: 25px;
+    @include tablet {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+}
+
+.description {
+  margin: 0;
+}
+
+.strong {
+  color: $orange;
+}
+
+.tick {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, 0);
+    width: 15px;
+    height: 11px;
+    background-image: url(../img/svg/sprite/tick.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 11px;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

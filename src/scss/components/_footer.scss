@@ -1,0 +1,75 @@
+.footer {
+  @include bg-cover;
+  background-image: url(../img/paterns/patern.jpg);
+  padding: 10px 0;
+}
+
+.footer__flex {
+  @include flex-all-sb;
+}
+
+.footer__logo {
+  width: 50px;
+  height: 50px;
+  fill: $white;
+  @include tablet {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+.footer__list {
+  @include flex-all-center;
+  gap: 10px;
+  @include tablet {
+    gap: 20px;
+  }
+  @include desktop {
+    gap: 30px;
+  }
+}
+
+.footer__item {
+  @include flex-all-center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $orange;
+  background: linear-gradient(153deg, #313134 3%, #292929 50%, #282828 100%);
+  @include tablet {
+    width: 80px;
+    height: 80px;
+  }
+  &:hover .social {
+    fill: $orange;
+  }
+  &:active .social {
+    @include opacity-7;
+  }
+}
+
+.footer__link {
+  @include flex-all-center;
+}
+
+.social {
+  width: 20px;
+  height: 10px;
+  fill: $white;
+  @include tablet {
+    width: 40px;
+    height: 30px;
+  }
+}
+
+.copy {
+  font-size: 6px;
+  text-transform: uppercase;
+  align-self: flex-end;
+  @include tablet {
+    font-size: 12px;
+  }
+  @include desktop {
+    font-size: 14px;
+  }
+}
