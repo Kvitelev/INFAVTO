@@ -11,10 +11,6 @@ const swiper = new Swiper(".slider", {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
 });
 
 const servicesSwiper = new Swiper(".services__slider", {
@@ -33,6 +29,18 @@ const servicesSwiper = new Swiper(".services__slider", {
   }
 });
 
+var reviewsSwiper = new Swiper(".reviews__slider", {
+  spaceBetween: 30,
+  grabCursor: true,
+  // hashNavigation: {
+  //   watchState: true,
+  // },
+  navigation: {
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  },
+});
+
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   effect: "flip",
   grabCursor: true,
@@ -46,7 +54,7 @@ const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   },
 });
 
-const gallery = new Swiper(".gallery", {
+const gallerySwiper = new Swiper(".gallery", {
   spaceBetween: 10,
   slidesPerView: 1,
   watchSlidesProgress: true,

@@ -1,0 +1,119 @@
+.reviews {
+  position: relative;
+  @include margin-bottom-50;
+}
+
+.reviews__title {
+  @include margin-bottom-20;
+}
+
+.reviews__slider {
+  position: static;
+  @include bg-cover;
+  background-image: url(../img/paterns/patern.jpg);
+  padding: 20px 10px 50px 10px;
+  border-radius: 40px;
+  border: 2px solid $orange;
+  max-width: 350px;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 74px;
+    height: 20px;
+    background-image: url(../img/svg/stars.svg);
+    background-size: 74px 20px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  @include breakpoint1140 {
+    max-width: 600px;
+  }
+}
+
+.reviews__slide {
+  position: relative;
+}
+
+.reviews__content {
+  text-align: center;
+}
+
+.reviews__avtors {
+  padding-top: 35px;
+  @include margin-bottom-20;
+  color: $orange;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/svg/user.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+  }
+}
+
+.reviews__name {
+  display: block;
+}
+
+.reviews__city {
+  font-size: 12px;
+}
+
+.reviews__date {
+  font-size: 10px;
+}
+
+.reviews__description {
+  @include flex-all-center;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.reviews__next,
+.reviews__prev {
+  top: 60%;
+  transform: translate(0, -40%);
+  @include breakpoint619-max {
+    display: block;
+  }
+}
+
+.reviews__next {
+  right: 0;
+  @include breakpoint490 {
+    right: 5%;
+  }
+  @include breakpoint690 {
+    right: 10%;
+  }
+  @include tablet {
+    right: 20%;
+  }
+  @include breakpoint1640 {
+    right: 25%;
+  }
+}
+.reviews__prev {
+  left: 0;
+  @include breakpoint490 {
+    left: 5%;
+  }
+  @include breakpoint690 {
+    left: 10%;
+  }
+  @include tablet {
+    left: 20%;
+  }
+  @include breakpoint1640 {
+    left: 25%;
+  }
+}
