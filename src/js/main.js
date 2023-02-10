@@ -11,32 +11,30 @@ const swiper = new Swiper(".slider", {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  keyboard: true,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
 });
 
 const servicesSwiper = new Swiper(".services__slider", {
-  slidesPerView: 1,
-  spaceBetween: 30,
+  effect: "cards",
+  grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
   breakpoints: {
-    834: {
-      slidesPerView: 2,
-    },
-    1440: {
+    1340: {
       slidesPerView: 3,
+      spaceBetween: 30,
+      effect: "none",
     },
   }
 });
 
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
-  lazy: true,
+  effect: "flip",
   grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
@@ -61,20 +59,12 @@ const gallery = new Swiper(".gallery", {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
 });
 
 const headerBtn = document.querySelector('.header__btn');
 const burger = document.querySelector('.burger');
 const close = document.querySelector('.close');
 const menu = document.querySelector('.nav');
-
-const btnPopupOpen = document.querySelector('.assistance__btn');
-const btnPopupClose = document.querySelector('.popup__close');
-const popup = document.querySelector('.popup');
 
 headerBtn.addEventListener('click', () => {
   if (menu.classList.contains('header__nav')) {
@@ -91,16 +81,25 @@ headerBtn.addEventListener('click', () => {
   }
 })
 
-btnPopupOpen.addEventListener('click', () => {
-  popup.style.display = 'block';
-})
-
-btnPopupClose.addEventListener('click', () => {
-    popup.style.display = 'none';
-})
-
-document.addEventListener('keydown', (evt) => {
-  if (evt.keyCode === 27) {
-    popup.style.display = 'none';
-  }
-})
+ymaps.ready(init);
+function init() {
+  const center = [55.793146, 37.390676];
+  const myMap = new ymaps.Map(document.querySelector('.map'), {
+      center: center,
+      zoom: 15,
+      controls: [],
+  });
+  const myPlacemark = new ymaps.Placemark(center, {
+      hintContent: 'INFAVTO',
+  }, {
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Изображение иконки метки
+    iconImageHref: 'img/svg/marker.svg',
+    // Размеры метки
+    iconImageSize: [40, 40],
+    // Смещение иконки
+    iconImageOffset: [-20, -25]
+  });
+  myMap.geoObjects.add(myPlacemark);
+}

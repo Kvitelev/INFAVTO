@@ -35,16 +35,34 @@ img {
 }
 
 .container {
-  max-width: 320px;
+  max-width: 310px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 5px;
+  @include breakpoint390 {
+    max-width: 380px;
+  }
+  @include breakpoint490 {
+    max-width: 470px;
+    padding: 0 10px;
+  }
+  @include breakpoint690 {
+    max-width: 670px;
+  }
+  @include breakpoint790 {
+    max-width: 770px;
+  }
   @include tablet {
-    max-width: 834px;
+    max-width: 814px;
+  }
+  @include breakpoint1140 {
+    max-width: 1040px;
     padding: 0 50px;
   }
+  @include breakpoint1340 {
+    max-width: 1240px;
+  }
   @include desktop {
-    max-width: 1440px;
-    padding: 0 100px;
+    max-width: 1340px;
   }
 }
 

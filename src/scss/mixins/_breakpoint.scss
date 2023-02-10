@@ -1,11 +1,89 @@
+@mixin breakpoint1920 {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin breakpoint1640 {
+  @media (min-width: 1640px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: 1440px) {
     @content;
   }
 }
 
+@mixin breakpoint1340 {
+  @media (min-width: 1340px) {
+    @content;
+  }
+}
+
+@mixin breakpoint1140 {
+  @media (min-width: 1140px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: 834px) {
+    @content;
+  }
+}
+
+// @mixin breakpoint820 {
+//   @media (min-width: 820px) {
+//     @content;
+//   }
+// }
+
+@mixin breakpoint620 {
+  @media (min-width: 620px) {
+    @content;
+  }
+}
+
+@mixin breakpoint619-max {
+  @media (max-width: 619px) {
+    @content;
+  }
+}
+
+// @mixin breakpoint520 {
+//   @media (min-width: 520px) {
+//     @content;
+//   }
+// }
+
+@mixin breakpoint420 {
+  @media (min-width: 420px) {
+    @content;
+  }
+}
+
+@mixin breakpoint790 {
+  @media (min-width: 790px) {
+    @content;
+  }
+}
+
+@mixin breakpoint690 {
+  @media (min-width: 690px) {
+    @content;
+  }
+}
+
+@mixin breakpoint490 {
+  @media (min-width: 490px) {
+    @content;
+  }
+}
+
+@mixin breakpoint390 {
+  @media (min-width: 390px) {
     @content;
   }
 }

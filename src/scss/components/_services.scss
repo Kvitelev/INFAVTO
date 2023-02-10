@@ -1,17 +1,27 @@
 .services {
   position: relative;
-  min-height: 500px;
-  @include tablet {
-    min-height: 750px;
-  }
+  overflow-x: hidden;
+  @include margin-bottom-50;
 }
 
 .services__title {
   @include margin-bottom-50;
 }
 
+.services__slider {
+  max-width: 270px;
+  margin: auto;
+  min-height: 400px;
+  @include tablet {
+    max-width: 400px;
+    min-height: 650px;
+  }
+  @include breakpoint1340 {
+    max-width: 100%;
+  }
+}
+
 .services__slide {
-  width: 250px;
   min-height: 350px;
   border-radius: 40px;
   background: linear-gradient(153deg, #313134 3%, #292929 50%, #282828 100%);
