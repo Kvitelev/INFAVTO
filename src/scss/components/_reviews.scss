@@ -1,20 +1,35 @@
 .reviews {
-  position: relative;
   @include margin-bottom-50;
+  @include tablet {
+    @include margin-bottom-100;
+  }
 }
 
 .reviews__title {
   @include margin-bottom-20;
+  @include tablet {
+    @include margin-bottom-50;
+  }
 }
 
 .reviews__slider {
-  position: static;
+  min-height: 420px;
+}
+
+.reviews__wrapper {
+  align-items: center;
+}
+
+.reviews__content {
+  text-align: center;
   @include bg-cover;
   background-image: url(../img/paterns/patern.jpg);
   padding: 20px 10px 50px 10px;
   border-radius: 40px;
   border: 2px solid $orange;
   max-width: 350px;
+  min-height: 300px;
+  margin: auto;
   &::before {
     content: "";
     position: absolute;
@@ -28,17 +43,9 @@
     background-position: bottom;
     background-repeat: no-repeat;
   }
-  @include breakpoint1140 {
-    max-width: 600px;
+  @include tablet {
+    min-height: 550px;
   }
-}
-
-.reviews__slide {
-  position: relative;
-}
-
-.reviews__content {
-  text-align: center;
 }
 
 .reviews__avtors {
@@ -48,7 +55,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 4%;
     left: 50%;
     transform: translate(-50%, 0);
     width: 30px;
@@ -68,23 +75,25 @@
   font-size: 12px;
 }
 
-.reviews__date {
-  font-size: 10px;
-}
-
 .reviews__description {
   @include flex-all-center;
   flex-direction: column;
   min-height: 200px;
+  @include tablet {
+    min-height: 400px;
+  }
+}
+
+.reviews__pagination {
+  @include breakpoint620 {
+    display: none;
+  }
 }
 
 .reviews__next,
 .reviews__prev {
-  top: 60%;
-  transform: translate(0, -40%);
-  @include breakpoint619-max {
-    display: block;
-  }
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .reviews__next {
@@ -96,12 +105,16 @@
     right: 10%;
   }
   @include tablet {
-    right: 20%;
+    right: 0;
+  }
+  @include desktop {
+    right: 3%;
   }
   @include breakpoint1640 {
-    right: 25%;
+    right: 5%;
   }
 }
+
 .reviews__prev {
   left: 0;
   @include breakpoint490 {
@@ -111,9 +124,12 @@
     left: 10%;
   }
   @include tablet {
-    left: 20%;
+    left: 0;
+  }
+  @include desktop {
+    left: 3%;
   }
   @include breakpoint1640 {
-    left: 25%;
+    left: 5%;
   }
 }

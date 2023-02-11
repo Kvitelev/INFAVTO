@@ -29,16 +29,37 @@ const servicesSwiper = new Swiper(".services__slider", {
   }
 });
 
-var reviewsSwiper = new Swiper(".reviews__slider", {
+const reviewsSwiper = new Swiper(".reviews__slider", {
+  slidesPerView: 1,
   spaceBetween: 30,
+  freeMode: true,
   grabCursor: true,
-  // hashNavigation: {
-  //   watchState: true,
-  // },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   navigation: {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
+  breakpoints: {
+    834: {
+      spaceBetween: 0,
+      slidesPerView: 2,
+    },
+    1140: {
+      spaceBetween: 0,
+      slidesPerView: 3,
+    },
+    1440: {
+      spaceBetween: -100,
+      slidesPerView: 3,
+    },
+    1920: {
+      spaceBetween: -200,
+      slidesPerView: 3,
+    },
+  }
 });
 
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
