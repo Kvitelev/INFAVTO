@@ -1,19 +1,39 @@
 .contacts__title {
   @include margin-bottom-50;
   &-second {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 
-.contacts__list {
-  text-align: center;
-  @include margin-bottom-20;
-  @include breakpoint690{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 20px;
+.contacts__wrapper {
+  position: relative;
+  border-top: 3px solid $orange;
+  border-bottom: 3px solid $orange;
+}
+
+.contacts__content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba($black, 0.8);
+  z-index: 1;
+  padding-top: 50px;
+  padding-left: 10px;
+  @include breakpoint690 {
+    padding-left: 50px;
+  }
+  @include tablet {
+    padding-top: 30px;
+    padding-left: 25px;
+    display: block;
+    width: 50%;
+  }
+  @include desktop {
+    width: 40%;
+    padding-left: 40px
   }
 }
 
@@ -21,14 +41,6 @@
   margin-bottom: 30px;
   &:last-child {
     margin-bottom: 0;
-  }
-  @include breakpoint1140 {
-    &:nth-child(2) {
-      order: 1;
-    }
-    &:nth-child(3) {
-      padding-top: 100px;
-    }
   }
 }
 
@@ -41,18 +53,26 @@
 .contacts__link {
   font-size: 18px;
   display: block;
-  margin: auto;
-  width: 280px;
   color: $orange;
+  max-width: 240px;
+  @include desktop {
+    font-size: 20px;
+    max-width: 250px;
+  }
   &:hover {
     @include opacity-7;
   }
   &:active {
     opacity: 0.3;
   }
-  @include desktop {
-    font-size: 24px;
-    line-height: 28px;
+}
+
+.contacts__btn-close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  @include tablet {
+    display: none;
   }
 }
 
@@ -62,11 +82,31 @@
   margin: 0;
   border: none;
   width: 100%;
-  min-height: 300px;
-  @include tablet {
-    min-height: 350px;
+  min-height: 400px;
+}
+
+.contacts__btn-open {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 70px;
+  height: 70px;
+  font-size: 10px;
+  color: $white;
+  border: 2px solid $orange;
+  border-radius: 50%;
+  background-color: rgba($black, 0.8);
+  background-image: url(../img/svg/stars.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 80%;
+  background-size: 38px 11px;
+  &:hover {
+    color: $orange;
   }
-  @include desktop {
-    min-height: 400px;
+  &:active {
+    color: rgba($orange, 0.8);
+  }
+  @include tablet {
+    display: none;
   }
 }

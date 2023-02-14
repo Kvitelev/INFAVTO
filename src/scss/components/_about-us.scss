@@ -33,7 +33,7 @@
   min-height: 250px;
   border-radius: 10px;
   border: 2px solid $orange;
-  background: linear-gradient(137deg, #303134 0%, #282828 47%, #282828 100%);
+  background-color: $black-bg;
   padding: 10px;
   @include tablet {
     width: 350px;

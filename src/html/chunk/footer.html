@@ -1,8 +1,14 @@
 <footer class="footer">
-  <div class="container footer__flex">
-    <svg class="footer__logo">
-      <use xlink:href="img/svg/sprite.svg#logo"></use>
-    </svg>
+  <div class="container footer__grid">
+    <img class="footer__logo" src="../img/svg/footer-logo.svg" alt="Логотип ИНФФВТО" width="81" height="64">
+    <ul class="list-reset footer__schedule-list">
+      <li class="schedule-item-title">Работаем по графику ГИБДД:</li>
+      <li class="footer__schedule-item">Пн: <span class="strong strong-left">9:00-17:00</span></li>
+      <li class="footer__schedule-item">Вт: <span class="strong strong-left">8:00-20:00</span></li>
+      <li class="footer__schedule-item">Ср-Пт: <span class="strong strong-left">8:00-18:00</span></li>
+      <li class="footer__schedule-item">Сб: <span class="strong strong-left">8:00-17:00</span></li>
+      <li class="footer__schedule-item">Вс: <span class="strong strong-left">выходной</span></li>
+    </ul>
     <ul class="list-reset footer__list">
       <li class="footer__item">
         <a class="footer__link" href="https://vk.com/1nfavto" target="_blank">
@@ -26,6 +32,19 @@
         </a>
       </li>
     </ul>
-    <p class="copy">&copy;inf.avto 2023</p>
+    <div class="footer__links">
+      <a class="footer__link link-mail" href="mailto:inf.avto@mail.ru">inf.avto@mail.ru</a>
+      <div class="footer__tel">
+        <a class="footer__link" href="tel:+74957666629" target="_blank">8 (495) 766 66 29</a>
+        <a class="footer__link" href="tel:+79857666629" target="_blank">8 (985) 766 66 29</a>
+      </div>
+    </div>
+    <p class="description footer__copy">&copy; INF.AVTO 2023</p>
   </div>
+  <button class="btn-reset btn-scroll-top" type="button">
+    <svg class="scroll">
+      <use xlink:href="img/svg/sprite.svg#scroll-top"></use>
+    </svg>
+    <span>Наверх</span>
+  </button>
 </footer>

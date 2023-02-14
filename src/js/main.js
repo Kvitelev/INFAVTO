@@ -1,3 +1,4 @@
+// Слайдер header
 const swiper = new Swiper(".slider", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -13,6 +14,7 @@ const swiper = new Swiper(".slider", {
   },
 });
 
+// Слайдер services
 const servicesSwiper = new Swiper(".services__slider", {
   effect: "cards",
   grabCursor: true,
@@ -29,6 +31,7 @@ const servicesSwiper = new Swiper(".services__slider", {
   }
 });
 
+// Слайдер reviews
 const reviewsSwiper = new Swiper(".reviews__slider", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -62,6 +65,7 @@ const reviewsSwiper = new Swiper(".reviews__slider", {
   }
 });
 
+// Слайдер production-numbers
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   effect: "flip",
   grabCursor: true,
@@ -75,6 +79,7 @@ const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   },
 });
 
+// Слайдер gallery
 const gallerySwiper = new Swiper(".gallery", {
   spaceBetween: 10,
   slidesPerView: 1,
@@ -90,6 +95,7 @@ const gallerySwiper = new Swiper(".gallery", {
   },
 });
 
+// Меню mobile
 const headerBtn = document.querySelector('.header__btn');
 const burger = document.querySelector('.burger');
 const close = document.querySelector('.close');
@@ -110,15 +116,17 @@ headerBtn.addEventListener('click', () => {
   }
 })
 
+// Карта
 ymaps.ready(init);
 function init() {
-  const center = [55.793146, 37.390676];
+  const center = [55.792801, 37.380870];
+  const placemark = [55.793146, 37.390676];
   const myMap = new ymaps.Map(document.querySelector('.map'), {
       center: center,
-      zoom: 15,
+      zoom: 14,
       controls: [],
   });
-  const myPlacemark = new ymaps.Placemark(center, {
+  const myPlacemark = new ymaps.Placemark(placemark, {
       hintContent: 'INFAVTO',
   }, {
     // Необходимо указать данный тип макета.
@@ -132,3 +140,38 @@ function init() {
   });
   myMap.geoObjects.add(myPlacemark);
 }
+
+// Контакты popup
+const contactsPopup = document.querySelector('.contacts__content');
+const contactsBtnOpen = document.querySelector('.contacts__btn-open');
+const contactsBtnClose = document.querySelector('.contacts__btn-close');
+
+contactsBtnOpen.addEventListener('click', () => {
+  contactsPopup.style.display = 'block';
+})
+
+contactsBtnClose.addEventListener('click', () => {
+  contactsPopup.style.display = 'none';
+})
+
+// Кнопка прокрутки наверх
+const btnScrollTop = document.querySelector('.btn-scroll-top');
+
+btnScrollTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+})
+
+window.onscroll = () => {
+  if (window.scrollY > 0) {
+    btnScrollTop.style.display = "visible";
+    btnScrollTop.style.opacity = 1;
+  }
+  else {
+    btnScrollTop.style.display = "hidden";
+    btnScrollTop.style.opacity = 0;
+  }
+};
