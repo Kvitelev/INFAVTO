@@ -1,61 +1,47 @@
 .production-numbers {
-  @include margin-bottom-50;
-}
-
-.production-numbers__content {
-  margin-bottom: 20px;
-  &:nth-child(2) {
-    position: relative;
-    margin-bottom: 40px;
-  }
-  &--center {
-    text-align: center;
-  }
+  position: relative;
 }
 
 .production-numbers__title {
-  margin-bottom: 20px;
+  @include margin-bottom-20;
   &-second {
     color: $orange;
     margin-bottom: 20px;
   }
 }
 
+.production-numbers__content {
+  @include margin-bottom-50;
+  &--center {
+    text-align: center;
+  }
+}
+
 .production-numbers__description {
-  margin-bottom: 10px;
+  @include margin-bottom-20;
   &--bg {
     min-height: 250px;
-    @include bg-cover;
     background-image: url(../img/catalog/production-numbers-1.png);
+    background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100% 110px;
     @include breakpoint690 {
       min-height: 300px;
       background-size: 80% 170px;
     }
-    @include desktop {
+    @include breakpoint1140 {
       background-size: 50% 210px;
     }
   }
-}
-
-.production-numbers__strong {
-  display: block;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.production-numbers__list {
-  margin-bottom: 20px;
-  @include desktop {
-    margin-bottom: 40px;
+  &--second {
+    margin-bottom: 5px;
   }
 }
 
 .production-numbers__item {
   position: relative;
   padding-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -73,54 +59,8 @@
   }
 }
 
-.production-numbers__slider {
-  @include tablet {
-    max-width: 500px;
-    margin: auto;
-  }
+.production-numbers__strong {
+  display: block;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
-
-.production-numbers__slide {
-  min-height: 300px;
-  &:nth-child(1) {
-    @include bg-cover;
-    background-image: url(../img/catalog/production-numbers-doc.png);
-    background-size: contain;
-  }
-  &:nth-child(2) {
-    @include bg-cover;
-    background-image: url(../img/catalog/production-numbers-2.png);
-    background-size: contain;
-  }
-  &:nth-child(3) {
-    @include bg-cover;
-    background-image: url(../img/catalog/production-numbers-3.png);
-    background-size: contain;
-  }
-  @include tablet {
-    &:nth-child(2),
-    &:nth-child(3) {
-      background-size: 300px auto;
-    }
-  }
-}
-
-.gallery {
-  position: relative;
-  @include bg-cover;
-  background-image: url(../img/paterns/patern.jpg);
-  padding: 30px 0;
-}
-
-.gallery__pagination {
-  @include tablet {
-    display: none;
-  }
-}
-
-.gallery__img {
-  @include desktop {
-    height: 400px;
-  }
-}
-

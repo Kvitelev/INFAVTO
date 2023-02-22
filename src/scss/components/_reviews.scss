@@ -23,7 +23,7 @@
 .reviews__content {
   text-align: center;
   @include bg-cover;
-  background-image: url(../img/paterns/patern.jpg);
+  background-color: $black-bg;
   padding: 20px 10px 50px 10px;
   border-radius: 40px;
   border: 2px solid $orange;
@@ -94,13 +94,13 @@
 .reviews__prev {
   top: 50%;
   transform: translate(0, -50%);
+  @include breakpoint619-max {
+    display: none;
+  }
 }
 
 .reviews__next {
   right: 0;
-  @include breakpoint490 {
-    right: 5%;
-  }
   @include breakpoint690 {
     right: 10%;
   }
@@ -117,9 +117,6 @@
 
 .reviews__prev {
   left: 0;
-  @include breakpoint490 {
-    left: 5%;
-  }
   @include breakpoint690 {
     left: 10%;
   }

@@ -25,13 +25,30 @@
           <a class="nav__link" href="#about-us">О нас</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="catalog.html">Услуги</a>
+          <a class="nav__link nav__link--services" href="#services">Услуги</a>
+          <ul class="list-reset nav__list--services">
+            <li class="nav__item nav__item--services">
+              <a class="nav__link" href="production.html">Изготовление дубликатов гос номеров</a>
+            </li>
+            <li class="nav__item nav__item--services">
+              <a class="nav__link" href="services.html">Помощь в <span class="uppercase">гибдд</span></a>
+            </li>
+          </ul>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#reviews">Отзывы</a>
         </li>
         <li class="nav__item">
+          <a class="nav__link" href="#photo-gallery">Фотогалерея</a>
+        </li>
+        <li class="nav__item">
           <a class="nav__link" href="#contacts">Контакты</a>
+        </li>
+        <li class="nav__item nav__item--mob">
+          <a class="nav__link nav__link--second" href="production.html">Изготовление дубликатов гос номеров</a>
+        </li>
+        <li class="nav__item nav__item--mob">
+          <a class="nav__link nav__link--second" href="services.html">Помощь в <span class="uppercase">гибдд</span></a>
         </li>
       </ul>
     </nav>
@@ -46,7 +63,7 @@
             <p class="description slider__description">
               Быстро и просто рассчитать cтоимость ОСАГО в Москве можно на нашем сайте и у наших специалистов.
             </p>
-            <a class="btn-reset btn btn-link" href="catalog.html" target="_blank">
+            <a class="btn-reset btn btn-link" href="services.html">
               <span>Подробнее</span>
               <svg class="link-icon">
                 <use xlink:href="img/svg/sprite.svg#link"></use>
@@ -65,7 +82,7 @@
               <li class="slider__item tick">Автострахование <span class="uppercase">осаго-каско</span></li>
               <li class="slider__item tick">Помощь в <span class="uppercase">гибдд</span></li>
             </ul>
-            <a class="btn-reset btn btn-link" href="catalog.html" target="_blank">
+            <a class="btn-reset btn btn-link" href="services.html">
               <span>Подробнее</span>
               <svg class="link-icon">
                 <use xlink:href="img/svg/sprite.svg#link"></use>
@@ -82,7 +99,7 @@
             <p class="description slider__description">
               Встретим вас у любого <span class="uppercase">гибдд</span>, оплатим госпошлину и при необходимости оформим полис <span class="uppercase">осаго</span>, заполним заявление, проведем регистрационные действия и выдадим Гос. номера
             </p>
-            <a class="btn-reset btn btn-link" href="catalog.html" target="_blank">
+            <a class="btn-reset btn btn-link" href="services.html">
               <span>Подробнее</span>
               <svg class="link-icon">
                 <use xlink:href="img/svg/sprite.svg#link"></use>
@@ -94,12 +111,12 @@
     </div>
 
     <div class="swiper-pagination slider__pagination"></div>
-    <button class="btn-reset custom-prev" aria-label="Переключить слайд">
+    <button class="btn-reset custom-prev slider__prev" aria-label="Переключить слайд">
       <svg class="arrow">
         <use xlink:href="img/svg/sprite.svg#arrow"></use>
       </svg>
     </button>
-    <button class="btn-reset custom-next" aria-label="Переключить слайд">
+    <button class="btn-reset custom-next slider__next" aria-label="Переключить слайд">
       <svg class="arrow arrow-rotate">
         <use xlink:href="img/svg/sprite.svg#arrow"></use>
       </svg>

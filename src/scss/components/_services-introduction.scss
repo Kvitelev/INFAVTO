@@ -1,0 +1,136 @@
+.services-introduction {
+  @include margin-bottom-50;
+}
+
+.services-introduction__title {
+  @include margin-bottom-20;
+}
+
+.services-introduction__content {
+  @include margin-bottom-50;
+  text-align: center;
+}
+
+.services-introduction__description {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.services-introduction__list {
+  counter-reset: list-numbering;
+  @include margin-bottom-20;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &--reverse {
+    counter-reset: none;
+  }
+  @include tablet {
+    @include flex-all-center;
+    flex-wrap: wrap;
+    &--reverse {
+      flex-direction: row-reverse;
+      padding-top: 20px;
+    }
+  }
+  @include desktop {
+    column-gap: 80px;
+  }
+}
+
+.services-introduction__item {
+  position: relative;
+  @include margin-bottom-20;
+  @include flex-v-center;
+  max-width: 240px;
+  min-height: 30px;
+  padding-left: 40px;
+  counter-increment: list-numbering;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &::before {
+    content: counter(list-numbering);
+    @include flex-all-center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    border: 2px solid $orange;
+    width: 30px;
+    height: 30px;
+    background-color: $black-bg;
+  }
+  @include breakpoint490 {
+    max-width: 400px;
+  }
+  @include tablet {
+    padding-left: 0;
+    width: 190px;
+    min-height: 100px;
+    align-items: end;
+    justify-content: center;
+    margin-bottom: 0;
+    &::before {
+      font-size: 20px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);;
+      width: 50px;
+      height: 50px;
+
+    }
+    &--traces {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 15%;
+        left: 75%;
+        width: 100px;
+        height: 17px;
+        background-image: url(../img/svg/traces.svg);
+        background-repeat: no-repeat;
+        background-size: 100px 17px;
+      }
+      &-reverse {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  @include desktop {
+    width: 250px;
+    min-height: 140px;
+    &::before {
+      font-size: 24px;
+      width: 80px;
+      height: 80px;
+    }
+    &--traces {
+      &::after {
+        top: 15%;
+        left: 75%;
+        width: 200px;
+        height: 40px;
+        background-size: 200px 40px;
+      }
+    }
+  }
+}
+
+.services-introduction__item-content {
+  @include tablet {
+    @include flex-all-center;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    min-height: 40px;
+  }
+  @include desktop {
+    font-size:  20px;
+    line-height: 20px;
+  }
+}

@@ -36,8 +36,8 @@ const fonter    = require("gulp-fonter");
 const ttf2woff2 = require("gulp-ttf2woff2");
 
 // Пути
-const projectFolder = 'public';
 const sourceFolder = 'src';
+const projectFolder = 'public';
 const paths = {
   src: {
     html: sourceFolder + '/html/*.html',
@@ -157,7 +157,7 @@ const createWebp = () => {
   return src(paths.src.webp)
     .pipe(newer(paths.build.img))
     .pipe(webp())
-    .pipe(newer(paths.build.img))
+    // .pipe(newer(paths.build.img))
     .pipe(dest(paths.build.img))
 }
 

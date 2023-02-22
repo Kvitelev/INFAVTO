@@ -1,0 +1,74 @@
+.products-card {
+  @include margin-bottom-50;
+}
+
+.products-card__list {
+  @include flex-all-center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.products-card__item {
+  display: grid;
+  grid-template-rows: 50px 150px 50px 50px;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  max-width: 300px;
+  text-align: center;
+  border: 3px solid $orange;
+  border-radius: 40px;
+  background-color: $black-bg;
+  background-image: url(../img/svg/stars.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 2%;
+  background-size: 74px 20px;
+  padding: 40px 20px 20px 20px;
+}
+
+.products-card__title,
+.products-card__prise-list {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.products-card__title {
+  margin: 0;
+}
+
+.products-card__img {
+  width: 250px;
+  height: 150px;
+}
+
+.products-card__prise-list {
+  justify-self: center;
+  align-self: end;
+}
+
+.products-card__prise-wrapper {
+  @include flex;
+  justify-content: end;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.products-card__prise-descr {
+  color: $orange;
+  margin-left: 10px;
+}
+
+.products-card__btn {
+  justify-self: center;
+  @include flex-all-center;
+  flex-direction: column;
+  width: 250px;
+  min-height: 50px;
+  line-height: 17px;
+  background: linear-gradient(91.93deg, #313234 4.62%, #292929 47.9%, #282828 95.35%);
+  & span {
+    font-size: 10px;
+    color: $orange;
+  }
+}

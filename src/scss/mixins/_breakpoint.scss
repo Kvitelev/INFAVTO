@@ -34,12 +34,6 @@
   }
 }
 
-// @mixin breakpoint820 {
-//   @media (min-width: 820px) {
-//     @content;
-//   }
-// }
-
 @mixin breakpoint620 {
   @media (min-width: 620px) {
     @content;
@@ -51,12 +45,6 @@
     @content;
   }
 }
-
-// @mixin breakpoint520 {
-//   @media (min-width: 520px) {
-//     @content;
-//   }
-// }
 
 @mixin breakpoint420 {
   @media (min-width: 420px) {

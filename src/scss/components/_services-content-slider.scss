@@ -1,0 +1,272 @@
+.services-content__slider {
+  @include margin-bottom-20;
+  position: relative;
+  min-height: 400px;
+  @include desktop {
+    @include margin-bottom-50;
+    min-height: 700px;
+  }
+}
+
+.services-content__slider-item {
+  @include flex-all-center;
+  width: 170px;
+  min-height: 350px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 170px;
+    height: 350px;
+    background-image: url(../img/services/phone-frame.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 170px 350px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50px;
+    height: 12px;
+    background-image: url(../img/svg/stars.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px 12px;
+  }
+  @include desktop {
+    width: 300px;
+    min-height: 600px;
+    &::before {
+      width: 300px;
+      height: 600px;
+      background-size: 300px 600px;
+    }
+    &::after {
+      width: 90px;
+      height: 20px;
+      background-size: 90px 20px;
+    }
+  }
+}
+
+.services-content__slider-content {
+  @include flex-v-center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 150px;
+  min-height: 343px;
+  border-radius: 30px;
+  padding: 40px 10px;
+  box-shadow: 0 10px 10px $black;
+  &--bg-1 {
+    background-image: url(../img/services/slide-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-2 {
+    background-image: url(../img/services/slide-2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-3 {
+    background-image: url(../img/services/slide-3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-4 {
+    background-image: url(../img/services/slide-4.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-5 {
+    background-image: url(../img/services/slide-5.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-6 {
+    background-image: url(../img/svg/polise.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-7 {
+    background-image: url(../img/services/slide-7.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px 130px;
+    background-color: $black-bg;
+  }
+  &--bg-8 {
+    background-image: url(../img/services/slide-8.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px 150px;
+    background-color: $black-bg;
+  }
+  &--bg-9 {
+    background-image: url(../img/services/slide-9.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px 130px;
+    background-color: $black-bg;
+  }
+  &--bg-10 {
+    background-image: url(../img/services/slide-10.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-11 {
+    background-image: url(../img/services/slide-11.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-12 {
+    background-image: url(../img/services/slide-12.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-13 {
+    background-image: url(../img/services/slide-13.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-14 {
+    background-image: url(../img/services/slide-14.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-15 {
+    background-image: url(../img/services/slide-15.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  &--bg-16 {
+    background-image: url(../img/services/slide-16.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    background-color: $black-bg;
+  }
+  @include desktop {
+    max-width: 290px;
+    min-height: 590px;
+    border-radius: 50px;
+    padding: 70px 25px;
+    box-shadow: 0 20px 20px $black;
+    font-size: 15px;
+    line-height: 18px;
+    &--bg-1 {
+      background-size: 250px 150px;
+    }
+    &--bg-2 {
+      background-size: 250px 150px;
+    }
+    &--bg-3 {
+      background-size: 250px 150px;
+    }
+    &--bg-4 {
+      background-size: 250px 150px;
+    }
+    &--bg-5 {
+      background-size: 250px 150px;
+    }
+    &--bg-6 {
+      background-size: 250px 150px;
+    }
+    &--bg-7 {
+      background-size: 250px 270px;
+    }
+    &--bg-8 {
+      background-size: 300px 250px;
+    }
+    &--bg-9 {
+      background-size: 200px 250px;
+    }
+    &--bg-10 {
+      background-size: 250px 150px;
+    }
+    &--bg-11 {
+      background-size: 230px 150px;
+    }
+    &--bg-12,
+    &--bg-13,
+    &--bg-14,
+    &--bg-15,
+    &--bg-16 {
+      background-size: 250px 150px;
+    }
+  }
+}
+
+.services-content__slider-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: auto;
+}
+
+.services-content__slider-prise {
+  @include flex;
+  column-gap: 5px;
+  margin-bottom: 10px;
+}
+
+.services-content__slider-btn {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  @include tablet {
+    min-height: 30px;
+  }
+  @include desktop {
+    width: 250px;
+    max-width: 250px;
+    min-height: 50px;
+  }
+}
+
+.services-content__slider__pagination {
+  @include tablet {
+    display:  none;
+  }
+}
+
+.services-content__slider__prev {
+  @include tablet {
+    left: 2%;
+  }
+}
+
+.services-content__slider__next {
+  @include tablet {
+    right: 2%;
+  }
+}

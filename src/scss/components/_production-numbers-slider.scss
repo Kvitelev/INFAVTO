@@ -1,0 +1,215 @@
+.production-numbers__slider {
+  position: relative;
+  overflow-x: hidden;
+  @include margin-bottom-50;
+}
+
+.production-numbers__slide {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  &:nth-child(1) {
+    @include bg-cover;
+    background-image: url(../img/slides/slide-4-mob.jpg);
+    @include breakpoint490 {
+      background-image: url(../img/slides/slide-4-tab.jpg);
+    }
+    @include breakpoint1140 {
+      background-image: url(../img/slides/slide-4.jpg);
+    }
+  }
+  &:nth-child(2) {
+    @include bg-cover;
+    background-image: url(../img/slides/slide-5-mob.jpg);
+    @include breakpoint490 {
+      background-image: url(../img/slides/slide-5-tab.jpg);
+    }
+    @include breakpoint1140 {
+      background-image: url(../img/slides/slide-5.jpg);
+    }
+  }
+  &:nth-child(3) {
+    @include bg-cover;
+    background-image: url(../img/slides/slide-6-mob.jpg);
+    @include breakpoint490 {
+      background-image: url(../img/slides/slide-6-tab.jpg);
+    }
+    @include breakpoint1140 {
+      background-image: url(../img/slides/slide-6.jpg);
+    }
+  }
+  &:nth-child(4) {
+    background: linear-gradient(352.28deg, #0F2027 14.25%, #203A43 50.36%, #2C5364 86.76%);
+    &::after {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      content: "";
+      width: 290px;
+      height: 110px;
+      background-image: url(../img/svg/slide-map.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 290px 110px;
+      transform: rotate(-31.2deg);
+      z-index: -1;
+      @include breakpoint390 {
+        left: 15%;
+      }
+      @include breakpoint490 {
+        top: 20%;
+        left: 20%;
+        width: 400px;
+        height: 250px;
+        background-size: 400px 250px;
+      }
+      @include breakpoint690 {
+        top: 10%;
+        width: 500px;
+        height: 350px;
+        background-size: 500px 350px;
+      }
+      @include tablet {
+        top: 5%;
+        left: 30%;
+        width: 550px;
+        height: 450px;
+        background-size: 550px 450px;
+      }
+      @include desktop {
+        top: -20px;
+        left: 40%;
+        width: 800px;
+        height: 500px;
+        background-size: 800px 500px;
+        transform: rotate(-10deg);
+      }
+    }
+  }
+  @include breakpoint690 {
+    padding-top: 150px;
+    &:nth-child(4) {
+      padding-top: 70px;
+    }
+  }
+  @include tablet {
+    padding-top: 70px;
+  }
+}
+
+.production-numbers__slide-content {
+  @include flex-all-center;
+  flex-direction: column;
+  text-align: center;
+  &--center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @include breakpoint490 {
+    text-align: start;
+    justify-content: start;
+    align-items: start;
+    padding-left: 30px;
+    &--center {
+      left: 20%;
+      transform: translate(-20%, -50%);
+    }
+  }
+}
+
+.production-numbers__slide-title,
+.production-numbers__slide-description {
+  font-size: 24px;
+  line-height: 24px;
+  @include tablet {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.production-numbers__slide-title {
+  @include margin-bottom-20;
+  text-transform: uppercase;
+  color: $orange;
+  @include breakpoint490 {
+    text-align: start;
+  }
+  @include tablet {
+    max-width: 600px;
+  }
+  @include desktop {
+    max-width: 750px;
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.production-numbers__slide-description {
+  @include margin-bottom-50;
+  max-width: 230px;
+  @include breakpoint490 {
+    max-width: 400px;
+  }
+  @include tablet {
+    max-width: 600px;
+  }
+  @include desktop {
+    max-width: 750px;
+  }
+}
+
+.production-numbers__slide-list {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%,0);
+  @include flex-all-center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  width: 100%;
+  @include breakpoint690 {
+    align-items: end;
+  }
+  @include tablet {
+    column-gap: 40px;
+  }
+  @include desktop {
+    left: 60%;
+    column-gap: 50px;
+  }
+}
+
+.production-numbers__slide-item {
+  @include breakpoint690 {
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 2;
+    }
+    &:nth-child(3) {
+      order: 0;
+    }
+  }
+}
+
+.production-numbers__slide-btn {
+  @include flex-all-center;
+  width: 250px;
+  min-height: 50px;
+  @include tablet {
+    width: 260px;
+  }
+}
+
+.production-numbers__prev {
+  left: 2%;
+}
+
+.production-numbers__next {
+  right: 2%;
+}

@@ -4,6 +4,9 @@ const swiper = new Swiper(".slider", {
   spaceBetween: 30,
   effect: "fade",
   loop: true,
+  keyboard: {
+    enabled: true,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -12,23 +15,6 @@ const swiper = new Swiper(".slider", {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
-});
-
-// Слайдер services
-const servicesSwiper = new Swiper(".services__slider", {
-  effect: "cards",
-  grabCursor: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    1340: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      effect: "none",
-    },
-  }
 });
 
 // Слайдер reviews
@@ -67,11 +53,9 @@ const reviewsSwiper = new Swiper(".reviews__slider", {
 
 // Слайдер production-numbers
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
-  effect: "flip",
-  grabCursor: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  spaceBetween: 30,
+  keyboard: {
+    enabled: true,
   },
   navigation: {
     nextEl: ".custom-next",
@@ -79,12 +63,11 @@ const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   },
 });
 
-// Слайдер gallery
-const gallerySwiper = new Swiper(".gallery", {
-  spaceBetween: 10,
+// Слайдер services-content
+const servicesContentSwiper = new Swiper(".services-content__slider", {
   slidesPerView: 1,
-  watchSlidesProgress: true,
-  grabCursor: true,
+  spaceBetween: 30,
+  freeMode: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -93,7 +76,25 @@ const gallerySwiper = new Swiper(".gallery", {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
+  breakpoints: {
+    834: {
+      spaceBetween: 0,
+      slidesPerView: 3,
+    },
+  }
 });
+
+//Фотогалерея
+const photoGallery = new Swiper(".photo-gallery__content", {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  freeMode: true,
+  navigation: {
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  },
+});
+
 
 // Меню mobile
 const headerBtn = document.querySelector('.header__btn');
@@ -101,12 +102,17 @@ const burger = document.querySelector('.burger');
 const close = document.querySelector('.close');
 const menu = document.querySelector('.nav');
 
+const navItem = document.querySelectorAll('.nav__item');
+const navListServices = document.querySelector('.nav__list--services');
+const mediaTablet = window.matchMedia("(min-width: 834px)");
+
 headerBtn.addEventListener('click', () => {
   if (menu.classList.contains('header__nav')) {
     menu.style.display = 'block';
     burger.style.display = 'none';
     close.style.display = 'block';
     menu.classList.remove('header__nav');
+    menu.classList.add('animation-1');
   }
   else {
     menu.style.display = 'none';
@@ -115,6 +121,22 @@ headerBtn.addEventListener('click', () => {
     menu.classList.add('header__nav');
   }
 })
+
+if (mediaTablet.matches) {
+  for (let i = 0; i < navItem.length; i++) {
+    navItem[2].addEventListener('mouseover', () => {
+      navListServices.style.display = 'block';
+      navListServices.classList.add('animation-2');
+    })
+    navItem[i].addEventListener('mouseover', () => {
+      navListServices.style.display = 'none';
+    })
+  }
+
+  navListServices.addEventListener('mouseout', () => {
+    navListServices.style.display = 'none';
+  })
+}
 
 // Карта
 ymaps.ready(init);
@@ -148,6 +170,7 @@ const contactsBtnClose = document.querySelector('.contacts__btn-close');
 
 contactsBtnOpen.addEventListener('click', () => {
   contactsPopup.style.display = 'block';
+  contactsPopup.classList.add('animation-1');
 })
 
 contactsBtnClose.addEventListener('click', () => {
@@ -175,3 +198,17 @@ window.onscroll = () => {
     btnScrollTop.style.opacity = 0;
   }
 };
+
+// Всплывающий сертификат
+const certificatPopup = document.querySelector('.certificate-popup');
+const certificateOpen = document.querySelector('.production-numbers__slide-btn--certificate-open');
+const certificateClose = document.querySelector('.certificate-popup__btn');
+
+certificateOpen.addEventListener('click', () => {
+  certificatPopup.style.display = 'block';
+  certificatPopup.classList.add('ainimation-popup');
+})
+
+certificateClose.addEventListener('click', () => {
+  certificatPopup.style.display = 'none';
+})

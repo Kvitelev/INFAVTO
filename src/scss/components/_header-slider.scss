@@ -50,6 +50,7 @@
 }
 
 .slider__list {
+  position: relative;
   margin-bottom: 20px;
   @include desktop {
     margin-bottom: 30px;
@@ -60,7 +61,6 @@
   position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
-  padding-top: 5px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -106,6 +106,10 @@
   top: 50%;
   transform: translate(0, -50%);
   z-index: 1;
+}
+
+.slider__prev,
+.slider__next {
   @include breakpoint619-max {
     display: none;
   }

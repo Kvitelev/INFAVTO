@@ -14,6 +14,7 @@ decription...
 
 ## Ссылки
 [Figma](https://www.figma.com/file/5dqqeAfqZalSNc0mVilTKq/INF.AVTO?node-id=0%3A1&t=kG0Fe1MSVmEnOLGk-1) Макет проета
+[INFAVTO](http://infavto.ru/) Проект
 
 ## Установленые пакеты
 [gulp](https://www.npmjs.com/package/gulp) Сборщик Gulp

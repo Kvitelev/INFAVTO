@@ -1,0 +1,52 @@
+.certificate-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  min-height: 600px;
+  z-index: 1;
+  background-image: url(../img/catalog/phone-frame.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 300px 600px;
+  @include tablet {
+    left: 70%;
+    transform: translate(-30%, -50%);
+  }
+  @include desktop {
+    left: 75%;
+    transform: translate(-25%, -50%);
+  }
+}
+
+.certificate-popup__flex {
+  @include flex-all-center;
+  flex-direction: column;
+  row-gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.certificate-popup__img {
+  width: 230px;
+  height: 350px;
+}
+
+.certificate-popup__btn {
+  width: 250px;
+  min-height: 50px;
+}
+
+.ainimation-popup {
+  animation: ainimation-popup 2s;
+}
+
+@keyframes ainimation-popup {
+  0% {
+    transform: translate(100%, -50%);
+  }
+}

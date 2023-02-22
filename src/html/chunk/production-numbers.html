@@ -1,73 +1,35 @@
 <section class="production-numbers">
+  <h1 class="title production-numbers__title">Изготовление дубликатов номерных знаков</h1>
+
   <div class="container">
-    <div class="production-numbers__content">
-      <h2 class="title production-numbers__title">Изготовление номеров на <span class="strong uppercase">тс</span></h2>
+    <article class="production-numbers__content">
       <p class="description production-numbers__description production-numbers__description--bg">
         <strong class="strong production-numbers__strong">Дубликаты номеров всего за 5 минут.</strong>
         Официальное изготовление дубликатов государственных регистрационных
         номерных знаков на легковые, грузовые автомобили, мотоциклы, трактора и спецтехнику.
       </p>
-    </div>
 
-    <div class="production-numbers__content">
-      <strong class="strong production-numbers__strong">Для изготовления номерных знаков вам потребуется при себе иметь:</strong>
-      <ul class="list-reset production-numbers__list">
-        <li class="production-numbers__item">Паспорт или водительские удостоверение;</li>
-        <li class="production-numbers__item"> <span class="uppercase">птс</span> или <span class="uppercase">сртс.</span></li>
-      </ul>
-
-      <div class="production-numbers__slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide production-numbers__slide"></div>
-          <div class="swiper-slide production-numbers__slide"></div>
-          <div class="swiper-slide production-numbers__slide"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <button class="btn-reset custom-prev" aria-label="Переключить слайд">
-          <svg class="arrow">
-            <use xlink:href="img/svg/sprite.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="btn-reset custom-next" aria-label="Переключить слайд">
-          <svg class="arrow arrow-rotate">
-            <use xlink:href="img/svg/sprite.svg#arrow"></use>
-          </svg>
-        </button>
+      <div>
+        <strong class="strong production-numbers__strong">Для изготовления номерных знаков вам потребуется при себе иметь:</strong>
+        <ul class="list-reset production-numbers__list">
+          <li class="production-numbers__item">Паспорт или водительские удостоверение</li>
+          <li class="production-numbers__item"> <span class="uppercase">птс</span> или <span class="uppercase">сртс</span></li>
+        </ul>
       </div>
-    </div>
+    </article>
+  </div>
 
-    <div class="production-numbers__content production-numbers__content--center">
+  @@include("../chunk/production-numbers-slider.html")
+  @@include("../chunk/products-card.html")
+
+  <div class="container">
+    <article class="production-numbers__content production-numbers__content--center">
       <h3 class="title-second production-numbers__title-second">Красивый номер</h3>
-      <p class="description production-numbers__description">
+      <p class="description production-numbers__description production-numbers__description--second">
         Мы предлагаем клиентам помощь с официальной регистрацией красивых номеров на любые транспортные средства.
         Благодаря большому профессионализму каждого сотрудника, мы гарантируем быстрый результат.
       </p>
       <strong class="strong production-numbers__strong">Стоймость красивого номера зависит от вашего пожелания</strong>
-    </div>
-  </div>
-
-  <div class="swiper gallery">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide gallery__slide">
-        <img class="gallery__img" src="../img/slides/slide-1.jpg" alt="Много красивых авто номеров весят на стене"/>
-      </div>
-      <div class="swiper-slide gallery__slide">
-        <img class="gallery__img" src="../img/slides/slide-2.jpg"" alt="Много красивых авто номеров весят на стене"/>
-      </div>
-      <div class="swiper-slide gallery__slide">
-        <img class="gallery__img" src="../img/slides/slide-3.jpg"" alt="Много красивых авто номеров весят на стене"/>
-      </div>
-    </div>
-    <div class="swiper-pagination gallery__pagination"></div>
-    <button class="btn-reset custom-prev" aria-label="Переключить слайд">
-      <svg class="arrow">
-        <use xlink:href="img/svg/sprite.svg#arrow"></use>
-      </svg>
-    </button>
-    <button class="btn-reset custom-next" aria-label="Переключить слайд">
-      <svg class="arrow arrow-rotate">
-        <use xlink:href="img/svg/sprite.svg#arrow"></use>
-      </svg>
-    </button>
+    </article>
   </div>
 </section>

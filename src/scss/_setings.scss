@@ -20,6 +20,13 @@ img {
   object-fit: contain;
 }
 
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
 .page {
   font-family: 'GG-Wolfram';
   font-size: 15px;
@@ -78,6 +85,7 @@ img {
   border-radius: 30px;
   background-color: transparent;
   color: $white;
+  padding: 0 10px;
   &:hover,
   &:hover .link-icon {
     color: $orange;
@@ -133,7 +141,7 @@ img {
   font-size: 25px;
   line-height: 25px;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   @include tablet {
     font-size: 35px;
     line-height: 48px;
@@ -163,17 +171,13 @@ img {
 
 .tick {
   &::before {
-    content: "";
+    content: "\2714";
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translate(-50%, 0);
     width: 15px;
     height: 11px;
-    background-image: url(../img/svg/sprite/tick.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 15px 11px;
+    color: $green;
   }
 }
 
