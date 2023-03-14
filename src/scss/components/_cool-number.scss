@@ -1,0 +1,38 @@
+.coolNumber-intro__title {
+  @include margin-bottom-20;
+  @include desktop {
+    @include margin-bottom-50;
+  }
+}
+
+.coolNumber-intro__content {
+  text-align: center;
+  @include margin-bottom-50;
+}
+
+.coolNumber-intro__img {
+  @include margin-bottom-20;
+  object-fit: cover;
+  @include breakpoint690 {
+    height: 300px;
+  }
+  @include desktop {
+    height: 450px;
+  }
+}
+
+.coolNumber-intro__descr {
+  margin: 0;
+  @include margin-bottom-20;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include tablet {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include desktop {
+    width: 1000px;
+  }
+}

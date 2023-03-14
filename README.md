@@ -13,7 +13,7 @@ decription...
 ## Библиотеки
 
 ## Ссылки
-[Figma](https://www.figma.com/file/5dqqeAfqZalSNc0mVilTKq/INF.AVTO?node-id=0%3A1&t=kG0Fe1MSVmEnOLGk-1) Макет проета
+[Figma](https://www.figma.com/file/dN5KBYvvvfMcXrrh5swfJR/%D0%98%D0%BD%D1%84%D0%90%D0%B2%D1%82%D0%BE?node-id=0%3A1&t=0V4OBRBuuUfdFDcV-1) Макет проета
 [INFAVTO](http://infavto.ru/) Проект
 
 ## Установленые пакеты

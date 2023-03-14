@@ -1,0 +1,33 @@
+.coolNumber-slider {
+  @include margin-bottom-50;
+  background-color: $black-bg;
+  padding: 25px 0;
+}
+
+.coolNumber-slider__list {
+  padding: 0;
+}
+
+.coolNumber-slider__img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  @include breakpoint690 {
+    width: 350px;
+    height: 350px;
+  }
+  @include tablet {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.coolNumber-slider__btn {
+  &--prev {
+    left: 1%;
+  }
+  &--next {
+    right: 1%;
+  }
+}

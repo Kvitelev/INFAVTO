@@ -22,19 +22,19 @@
     background-image: url(../img/services/banner-1.png);
     background-repeat: no-repeat;
     background-position: right 75%;
-    background-size: 170px 100px;
+    background-size: 200px 130px;
   }
   &-bg-2 {
     background-image: url(../img/services/banner-2.png);
     background-repeat: no-repeat;
     background-position: right 75%;
-    background-size: 150px 100px;
+    background-size: 180px 130px;
   }
   &-bg-3 {
     background-image: url(../img/services/banner-3.png);
     background-repeat: no-repeat;
     background-position: right 75%;
-    background-size: 150px 100px;
+    background-size: 180px 130px;
   }
   @include breakpoint490 {
     &-bg-1 {
@@ -102,7 +102,7 @@
   margin-bottom: 10px;
   font-size: 15px;
   line-height: 15px;
-  max-width: 215px;
+  max-width: 260px;
   font-weight: 400;
   @include breakpoint690 {
     @include margin-bottom-20;
@@ -119,7 +119,7 @@
 
 .banner__description {
   margin-bottom: 10px;
-  max-width: 200px;
+  max-width: 230px;
   @include breakpoint690 {
     @include margin-bottom-20;
     max-width: 350px;
@@ -140,20 +140,24 @@
   position: relative;
   margin-bottom: 5px;
   padding-left: 15px;
+  width: 150px;
   &:last-child {
     margin-bottom: 0;
   }
   @include breakpoint690 {
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
+    width: 300px;
   }
   @include desktop {
+    width: 500px;
     margin-bottom: 15px;
-    padding-left: 30px;
   }
 }
 
 .banner__btn {
+  max-width: 150px;
+  min-height: 40px;
   @include breakpoint690 {
     max-width: 250px;
     min-height: 50px;

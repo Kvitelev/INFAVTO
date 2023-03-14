@@ -22,7 +22,6 @@
 
 .photo-gallery__img {
   display: block;
-  width: 100%;
   height: 250px;
   margin: auto;
   @include tablet {
@@ -30,10 +29,11 @@
   }
 }
 
-.photo-gallery__btn--prev {
-  left: 1%;
-}
-
-.photo-gallery__btn--next {
-  right: 1%;
+.photo-gallery__btn {
+  &--prev {
+    left: 1%;
+  }
+  &--next {
+    right: 1%;
+  }
 }

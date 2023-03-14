@@ -1,0 +1,65 @@
+.important-information {
+  position: relative;
+  background-color: $black-bg;
+  border-top: 2px solid $orange;
+  border-bottom: 2px solid $orange;
+  min-height: 450px;
+  padding: 50px 0;
+  @include flex-all-center;
+  @include margin-bottom-50;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &::before {
+    top: 5%;
+    width: 150px;
+    height: 80px;
+    background-image: url(../img/svg/car-svg.svg);
+    background-size: 150px 80px;
+  }
+  &::after {
+    bottom: 5%;
+    width: 75px;
+    height: 20px;
+    background-image: url(../img/svg/stars.svg);
+    background-size: 75px 20px;
+  }
+  @include tablet {
+    min-height: 500px;
+    &::before {
+      width: 200px;
+      height: 100px;
+      background-size: 200px 100px;
+    }
+    &::after {
+      width: 100px;
+      height: 30px;
+      background-size: 100px 30px;
+    }
+  }
+  @include desktop {
+    // min-height: 550px;
+    &::before {
+      width: 250px;
+      height: 150px;
+      background-size: 250px 150px;
+    }
+  }
+}
+
+.important-information__desc {
+  text-align: center;
+  @include tablet {
+    padding-top: 50px;
+    width: 700px;
+  }
+  @include desktop {
+    padding-top: 100px;
+  }
+}

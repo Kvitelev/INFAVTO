@@ -9,6 +9,7 @@
 }
 
 .products-card__item {
+  position: relative;
   display: grid;
   grid-template-rows: 50px 150px 50px 50px;
   grid-template-columns: 1fr;
@@ -38,6 +39,28 @@
 .products-card__img {
   width: 250px;
   height: 150px;
+}
+
+.products-card__tagging {
+  position: absolute;
+  display: block;
+  width: 200px;
+  font-size: 10px;
+  line-height: 10px;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  &::before {
+    content: "\2706";
+    display: inline-block;
+    font-size: 15px;
+    color: $orange;
+    padding-right: 5px;
+    animation: ainimation-scale 2s infinite;
+  }
+  @include tablet {
+    width: 250px;
+  }
 }
 
 .products-card__prise-list {

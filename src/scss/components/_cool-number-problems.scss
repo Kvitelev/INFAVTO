@@ -1,0 +1,55 @@
+.coolNumber-problems__title {
+  @include margin-bottom-50;
+  &-second {
+    position: relative;
+    margin: 0;
+    padding-top: 25px;
+    color: $orange;
+    font-weight: 400;
+    @include margin-bottom-20;
+    &::before {
+      content: '№' counter(num);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      color: $orange;
+    }
+  }
+  @include tablet {
+    &-second {
+      margin: 0;
+      width: 50%;
+      padding: 50px 20px;
+    }
+  }
+}
+
+.coolNumber-problems__list {
+  text-align: center;
+  counter-reset: num;
+  @include tablet {
+    @include margin-bottom-50;
+  }
+}
+
+.coolNumber-problems__item {
+  counter-increment: num;
+  @include margin-bottom-50;
+  @include tablet {
+    @include flex-all-sb;
+    background-color: $black-bg;
+    margin: 0;
+    &:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.coolNumber-problems__desc {
+  @include tablet {
+    width: 50%;
+    background-color: $orange;
+    padding: 50px 20px;
+  }
+}

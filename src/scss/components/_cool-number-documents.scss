@@ -1,0 +1,66 @@
+.coolNumber-doc {
+  @include margin-bottom-50;
+}
+
+.coolNumber-doc__title {
+  @include margin-bottom-20;
+  @include breakpoint690 {
+    @include margin-bottom-50;
+  }
+}
+
+.coolNumber-doc__content {
+  @include breakpoint690 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.coolNumber-doc__list {
+  @include margin-bottom-20;
+  counter-reset: numbering;
+  &:not(:nth-child(1)){
+    counter-reset: none;
+  }
+  @include tablet {
+    @include margin-bottom-50;
+  }
+}
+
+.coolNumber-doc__item {
+  position: relative;
+  width:300px;
+  padding-left: 40px;
+  counter-increment: numbering;
+  @include margin-bottom-20;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &::before {
+    content: counter(numbering);
+    @include flex-all-center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    border: 2px solid $orange;
+    width: 30px;
+    height: 30px;
+    background-color: $black-bg;
+  }
+  @include tablet {
+    width: 350px;
+    padding-left: 70px;
+    @include margin-bottom-50;
+    &::before {
+      width: 50px;
+      height: 50px;
+
+    }
+  }
+  @include desktop {
+    width: 570px;
+  }
+}

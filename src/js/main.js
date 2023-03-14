@@ -1,22 +1,3 @@
-// Слайдер header
-const swiper = new Swiper(".slider", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "fade",
-  loop: true,
-  keyboard: {
-    enabled: true,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".custom-next",
-    prevEl: ".custom-prev",
-  },
-});
-
 // Слайдер reviews
 const reviewsSwiper = new Swiper(".reviews__slider", {
   slidesPerView: 1,
@@ -84,8 +65,19 @@ const servicesContentSwiper = new Swiper(".services-content__slider", {
   }
 });
 
-//Фотогалерея
+// Фотогалерея
 const photoGallery = new Swiper(".photo-gallery__content", {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  freeMode: true,
+  navigation: {
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  },
+});
+
+// Фотогалерея красивого гос номера
+const coolNumberSlider = new Swiper(".coolNumber-slider", {
   spaceBetween: 30,
   slidesPerView: 1,
   freeMode: true,
@@ -102,41 +94,23 @@ const burger = document.querySelector('.burger');
 const close = document.querySelector('.close');
 const menu = document.querySelector('.nav');
 
-const navItem = document.querySelectorAll('.nav__item');
-const navListServices = document.querySelector('.nav__list--services');
-const mediaTablet = window.matchMedia("(min-width: 834px)");
-
 headerBtn.addEventListener('click', () => {
   if (menu.classList.contains('header__nav')) {
     menu.style.display = 'block';
     burger.style.display = 'none';
     close.style.display = 'block';
     menu.classList.remove('header__nav');
-    menu.classList.add('animation-1');
+    menu.classList.add('animation-2');
+    headerBtn.classList.remove('header__btn-style');
   }
   else {
     menu.style.display = 'none';
     burger.style.display = 'block';
     close.style.display = 'none';
     menu.classList.add('header__nav');
+    headerBtn.classList.add('header__btn-style');
   }
 })
-
-if (mediaTablet.matches) {
-  for (let i = 0; i < navItem.length; i++) {
-    navItem[2].addEventListener('mouseover', () => {
-      navListServices.style.display = 'block';
-      navListServices.classList.add('animation-2');
-    })
-    navItem[i].addEventListener('mouseover', () => {
-      navListServices.style.display = 'none';
-    })
-  }
-
-  navListServices.addEventListener('mouseout', () => {
-    navListServices.style.display = 'none';
-  })
-}
 
 // Карта
 ymaps.ready(init);

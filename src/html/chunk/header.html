@@ -1,22 +1,15 @@
 <header class="header">
-  <div class="header__wrapper">
-    <div class="container header__flex">
-      <a class="header__logo" href="index.html" aria-label="Переход на главную страницу сайта">
-        <svg class="logo" role="img" aria-label="Логотип INFAVTO">
-          <use xlink:href="img/svg/sprite.svg#logo"></use>
-        </svg>
-      </a>
-      <button class="btn-reset header__btn" type="button">
-        <svg class="burger" role="img" aria-label="Открыть меню">
-          <use xlink:href="img/svg/sprite.svg#burger"></use>
-        </svg>
-        <svg class="close close-none" role="img" aria-label="Закрыть меню">
-          <use xlink:href="img/svg/sprite.svg#close"></use>
-        </svg>
-      </button>
-    </div>
-
-    <nav class="nav header__nav">
+  <div class="container">
+    <button class="btn-reset header__btn header__btn-style" type="button">
+      <svg class="burger" role="img" aria-label="Открыть меню">
+        <use xlink:href="img/svg/sprite.svg#burger"></use>
+      </svg>
+      <svg class="close close-none" role="img" aria-label="Закрыть меню">
+        <use xlink:href="img/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <nav class="nav">
+      <img class="header__logo" src="../img/svg/logo.svg" alt="Логотип ИНФАВТО" width="81" height="64">
       <ul class="list-reset nav__list">
         <li class="nav__item">
           <a class="nav__link" href="index.html">Главная</a>
@@ -25,15 +18,7 @@
           <a class="nav__link" href="#about-us">О нас</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link nav__link--services" href="#services">Услуги</a>
-          <ul class="list-reset nav__list--services">
-            <li class="nav__item nav__item--services">
-              <a class="nav__link" href="production.html">Изготовление дубликатов гос номеров</a>
-            </li>
-            <li class="nav__item nav__item--services">
-              <a class="nav__link" href="services.html">Помощь в <span class="uppercase">гибдд</span></a>
-            </li>
-          </ul>
+          <a class="nav__link" href="#services">Услуги</a>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="#reviews">Отзывы</a>
@@ -45,81 +30,28 @@
           <a class="nav__link" href="#contacts">Контакты</a>
         </li>
         <li class="nav__item nav__item--mob">
-          <a class="nav__link nav__link--second" href="production.html">Изготовление дубликатов гос номеров</a>
+          <a class="nav__link nav__link--second" href="dublikat-gos-nomer.html">Изготовление дубликатов гос номеров</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="blatnoi-nomer.html">Красивый номер для авто</a>
         </li>
         <li class="nav__item nav__item--mob">
-          <a class="nav__link nav__link--second" href="services.html">Помощь в <span class="uppercase">гибдд</span></a>
+          <a class="nav__link nav__link--second" href="help-gibdd.html">Помощь в <span class="uppercase">гибдд</span></a>
         </li>
       </ul>
     </nav>
-  </div>
-
-  <div class="slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide slider__bg slider__bg--1">
-        <div class="container">
-          <div class="slider__content">
-            <h2 class="title slider__title">Оформи электронный полис ОСАГО не выходя из дома</h2>
-            <p class="description slider__description">
-              Быстро и просто рассчитать cтоимость ОСАГО в Москве можно на нашем сайте и у наших специалистов.
-            </p>
-            <a class="btn-reset btn btn-link" href="services.html">
-              <span>Подробнее</span>
-              <svg class="link-icon">
-                <use xlink:href="img/svg/sprite.svg#link"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide slider__bg slider__bg--2">
-        <div class="container">
-          <div class="slider__content">
-            <h2 class="title slider__title">Услуги для Автовладельцев</h2>
-            <ul class="list-reset slider__list">
-              <li class="slider__item tick">Изготовление номеров на <span class="uppercase">тс</span></li>
-              <li class="slider__item tick">Автострахование <span class="uppercase">осаго-каско</span></li>
-              <li class="slider__item tick">Помощь в <span class="uppercase">гибдд</span></li>
-            </ul>
-            <a class="btn-reset btn btn-link" href="services.html">
-              <span>Подробнее</span>
-              <svg class="link-icon">
-                <use xlink:href="img/svg/sprite.svg#link"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide slider__bg slider__bg--3">
-        <div class="container">
-          <div class="slider__content">
-            <h2 class="title slider__title">Постановка вашего автомобиля на учет</h2>
-            <p class="description slider__description">
-              Встретим вас у любого <span class="uppercase">гибдд</span>, оплатим госпошлину и при необходимости оформим полис <span class="uppercase">осаго</span>, заполним заявление, проведем регистрационные действия и выдадим Гос. номера
-            </p>
-            <a class="btn-reset btn btn-link" href="services.html">
-              <span>Подробнее</span>
-              <svg class="link-icon">
-                <use xlink:href="img/svg/sprite.svg#link"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="header__content">
+      <h2 class="title header__title">Оформи полис <br> <span class="uppercase strong">осаго-каско</span> на выгодных условиях не выходя из дома</h2>
+      <p class="description header__description">
+        Свяжитесь с нами, мы подберём для вас самые выгодные условия в ведущих СК.
+        А также быстро и просто рассчитать cтоимость можно у нас на сайте.
+      </p>
+      <a class="btn-reset btn btn-link" href="https://new.ntws.pro/referrer-widget/28338" target="_blank">
+        <span>Подробнее</span>
+        <svg class="link-icon">
+          <use xlink:href="img/svg/sprite.svg#link"></use>
+        </svg>
+      </a>
     </div>
-
-    <div class="swiper-pagination slider__pagination"></div>
-    <button class="btn-reset custom-prev slider__prev" aria-label="Переключить слайд">
-      <svg class="arrow">
-        <use xlink:href="img/svg/sprite.svg#arrow"></use>
-      </svg>
-    </button>
-    <button class="btn-reset custom-next slider__next" aria-label="Переключить слайд">
-      <svg class="arrow arrow-rotate">
-        <use xlink:href="img/svg/sprite.svg#arrow"></use>
-      </svg>
-    </button>
   </div>
 </header>

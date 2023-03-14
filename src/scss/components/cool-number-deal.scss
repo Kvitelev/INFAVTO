@@ -1,0 +1,39 @@
+.coolNumber-deal__center {
+  text-align: center;
+}
+
+.coolNumber-deal__content-title {
+  @include margin-bottom-20;
+  @include desktop {
+    @include margin-bottom-50;
+  }
+}
+
+.coolNumber-deal__content {
+  @include margin-bottom-50;
+  @include desktop {
+    @include flex-all-sb;
+    &:nth-child(3n) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.coolNumber-deal__desc {
+  @include margin-bottom-20;
+  @include desktop {
+    width: 550px;
+    margin-bottom: 0;
+  }
+}
+
+.coolNumber-deal__title {
+  margin-bottom: 5px;
+}
+
+.coolNumber-deal__img {
+  height: 380px;
+  @include tablet {
+    height: 600px;
+  }
+}

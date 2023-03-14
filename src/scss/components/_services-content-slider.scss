@@ -243,9 +243,7 @@
   position: relative;
   z-index: 1;
   width: 140px;
-  @include tablet {
-    min-height: 30px;
-  }
+  min-height: 30px;
   @include desktop {
     width: 250px;
     max-width: 250px;

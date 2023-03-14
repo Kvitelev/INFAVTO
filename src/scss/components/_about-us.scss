@@ -6,17 +6,19 @@
 }
 
 .about-us__title {
-  margin-bottom: 40px;
-  @include tablet {
-    margin-bottom: 100px;
-  }
+  @include margin-bottom-20;
+}
+
+.about-us__introduction {
+  @include margin-bottom-50;
+  text-align: center;
 }
 
 .about-us__list {
   @include flex-all-center;
   flex-direction: column;
-  row-gap: 20px;
   text-align: center;
+  row-gap: 20px;
   margin-bottom: 10px;
   @include breakpoint690 {
     flex-direction: row;
