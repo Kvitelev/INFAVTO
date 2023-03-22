@@ -4,29 +4,33 @@
 }
 
 .photo-gallery__title {
-  @include margin-bottom-20;
+  @include margin-bottom-50;
 }
 
 .photo-gallery__content {
   background-color: $black-bg;
-  min-height: 200px;
   padding: 25px 0;
-  @include tablet {
-    min-height: 400px;
-  }
 }
 
 .photo-gallery__list {
   padding: 0;
 }
 
-.photo-gallery__img {
-  display: block;
+.photo-gallery__item {
+  width: 250px;
   height: 250px;
-  margin: auto;
   @include tablet {
+    height: 300px;
+  }
+  @include desktop {
     height: 350px;
   }
+}
+
+.photo-gallery__img {
+  display: block;
+  height: 100%;
+  object-fit: fill;
 }
 
 .photo-gallery__btn {

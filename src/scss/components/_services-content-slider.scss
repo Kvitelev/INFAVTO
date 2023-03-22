@@ -1,9 +1,8 @@
 .services-content__slider {
-  @include margin-bottom-20;
+  @include margin-bottom-50;
   position: relative;
   min-height: 400px;
   @include desktop {
-    @include margin-bottom-50;
     min-height: 700px;
   }
 }

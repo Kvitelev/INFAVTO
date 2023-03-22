@@ -1,9 +1,40 @@
+// Слайдер header
+const options = {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+};
+
+if(location.href === 'http://localhost:3000/dublikat-gos-nomer.html') {
+  options.initialSlide = 1;
+  delete options.autoplay;
+}
+else if (location.href === 'http://localhost:3000/blatnoi-nomer.html') {
+  options.initialSlide = 2;
+  delete options.autoplay;
+}
+else if (location.href === 'http://localhost:3000/help-gibdd.html') {
+  options.initialSlide = 3;
+  delete options.autoplay;
+}
+// else if (location.href === 'http://localhost:3000/dublikat-gos-nomer.html') {
+//   options.initialSlide = 4;
+// }
+
+const headerSwiper = new Swiper(".header__slider", options);
+
 // Слайдер reviews
 const reviewsSwiper = new Swiper(".reviews__slider", {
   slidesPerView: 1,
   spaceBetween: 30,
   freeMode: true,
   grabCursor: true,
+  keyboard: {
+    enabled: true,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -35,12 +66,17 @@ const reviewsSwiper = new Swiper(".reviews__slider", {
 // Слайдер production-numbers
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   spaceBetween: 30,
+  freeMode: true,
   keyboard: {
     enabled: true,
   },
   navigation: {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
+  },
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
   },
 });
 
@@ -49,6 +85,7 @@ const servicesContentSwiper = new Swiper(".services-content__slider", {
   slidesPerView: 1,
   spaceBetween: 30,
   freeMode: true,
+  grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -62,31 +99,73 @@ const servicesContentSwiper = new Swiper(".services-content__slider", {
       spaceBetween: 0,
       slidesPerView: 3,
     },
-  }
+  },
+  keyboard: {
+    enabled: true,
+  },
 });
 
 // Фотогалерея
 const photoGallery = new Swiper(".photo-gallery__content", {
-  spaceBetween: 30,
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
   slidesPerView: 1,
-  freeMode: true,
+  initialSlide: 1,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 0,
+    modifier: 1,
+    slideShadows: true,
+  },
+  keyboard: {
+    enabled: true,
+  },
   navigation: {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
+  breakpoints: {
+    690: {
+      slidesPerView: 2,
+    },
+    1440: {
+      slidesPerView: 3,
+    },
+  }
 });
 
 // Фотогалерея красивого гос номера
 const coolNumberSlider = new Swiper(".coolNumber-slider", {
-  spaceBetween: 30,
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
   slidesPerView: 1,
-  freeMode: true,
+  initialSlide: 1,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 0,
+    modifier: 1,
+    slideShadows: true,
+  },
+  keyboard: {
+    enabled: true,
+  },
   navigation: {
     nextEl: ".custom-next",
     prevEl: ".custom-prev",
   },
+  breakpoints: {
+    690: {
+      slidesPerView: 2,
+    },
+    1440: {
+      slidesPerView: 3,
+    },
+  }
 });
-
 
 // Меню mobile
 const headerBtn = document.querySelector('.header__btn');
@@ -100,7 +179,7 @@ headerBtn.addEventListener('click', () => {
     burger.style.display = 'none';
     close.style.display = 'block';
     menu.classList.remove('header__nav');
-    menu.classList.add('animation-2');
+    menu.classList.add('animation-top');
     headerBtn.classList.remove('header__btn-style');
   }
   else {
@@ -144,7 +223,7 @@ const contactsBtnClose = document.querySelector('.contacts__btn-close');
 
 contactsBtnOpen.addEventListener('click', () => {
   contactsPopup.style.display = 'block';
-  contactsPopup.classList.add('animation-1');
+  contactsPopup.classList.add('animation-left');
 })
 
 contactsBtnClose.addEventListener('click', () => {
@@ -158,7 +237,6 @@ btnScrollTop.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     left: 0,
-    behavior: 'smooth'
   });
 })
 
@@ -186,3 +264,108 @@ certificateOpen.addEventListener('click', () => {
 certificateClose.addEventListener('click', () => {
   certificatPopup.style.display = 'none';
 })
+
+// Всплывающие окно в карточке товара
+const tipBtns = document.querySelectorAll('.products-card__tip');
+const productsCardPopup = document.querySelectorAll('.products-card__popup');
+
+tipBtns[0].addEventListener('click', () => {
+  productsCardPopup[0].style.display = 'block';
+  tipBtns[0].style.display = 'none';
+  productsCardPopup[0].classList.add('ainimation-product-cart');
+})
+productsCardPopup[0].addEventListener('mouseout', () => {
+  productsCardPopup[0].style.display = 'none';
+  tipBtns[0].style.display = 'block';
+  tipBtns[0].classList.add('ainimation-product-cart');
+})
+
+tipBtns[1].addEventListener('click', () => {
+  productsCardPopup[1].style.display = 'block';
+  tipBtns[1].style.display = 'none';
+  productsCardPopup[1].classList.add('ainimation-product-cart');
+})
+productsCardPopup[1].addEventListener('mouseout', () => {
+  productsCardPopup[1].style.display = 'none';
+  tipBtns[1].style.display = 'block';
+  tipBtns[1].classList.add('ainimation-product-cart');
+})
+
+tipBtns[2].addEventListener('click', () => {
+  productsCardPopup[2].style.display = 'block';
+  tipBtns[2].style.display = 'none';
+  productsCardPopup[2].classList.add('ainimation-product-cart');
+})
+productsCardPopup[2].addEventListener('mouseout', () => {
+  productsCardPopup[2].style.display = 'none';
+  tipBtns[2].style.display = 'block';
+  tipBtns[2].classList.add('ainimation-product-cart');
+})
+
+tipBtns[3].addEventListener('click', () => {
+  productsCardPopup[3].style.display = 'block';
+  tipBtns[3].style.display = 'none';
+  productsCardPopup[3].classList.add('ainimation-product-cart');
+})
+productsCardPopup[3].addEventListener('mouseout', () => {
+  productsCardPopup[3].style.display = 'none';
+  tipBtns[3].style.display = 'block';
+  tipBtns[3].classList.add('ainimation-product-cart');
+})
+
+tipBtns[4].addEventListener('click', () => {
+  productsCardPopup[4].style.display = 'block';
+  tipBtns[4].style.display = 'none';
+  productsCardPopup[4].classList.add('ainimation-product-cart');
+})
+productsCardPopup[4].addEventListener('mouseout', () => {
+  productsCardPopup[4].style.display = 'none';
+  tipBtns[4].style.display = 'block';
+  tipBtns[4].classList.add('ainimation-product-cart');
+})
+
+tipBtns[5].addEventListener('click', () => {
+  productsCardPopup[5].style.display = 'block';
+  tipBtns[5].style.display = 'none';
+  productsCardPopup[5].classList.add('ainimation-product-cart');
+})
+productsCardPopup[5].addEventListener('mouseout', () => {
+  productsCardPopup[5].style.display = 'none';
+  tipBtns[5].style.display = 'block';
+  tipBtns[5].classList.add('ainimation-product-cart');
+})
+
+tipBtns[6].addEventListener('click', () => {
+  productsCardPopup[6].style.display = 'block';
+  tipBtns[6].style.display = 'none';
+  productsCardPopup[6].classList.add('ainimation-product-cart');
+})
+productsCardPopup[6].addEventListener('mouseout', () => {
+  productsCardPopup[6].style.display = 'none';
+  tipBtns[6].style.display = 'block';
+  tipBtns[6].classList.add('ainimation-product-cart');
+})
+
+tipBtns[7].addEventListener('click', () => {
+  productsCardPopup[7].style.display = 'block';
+  tipBtns[7].style.display = 'none';
+  productsCardPopup[7].classList.add('ainimation-product-cart');
+})
+productsCardPopup[7].addEventListener('mouseout', () => {
+  productsCardPopup[7].style.display = 'none';
+  tipBtns[7].style.display = 'block';
+  tipBtns[7].classList.add('ainimation-product-cart');
+})
+
+// header content
+// const headerTitle = document.querySelector('.header__title');
+// const headerText = document.querySelector('.header__description');
+
+// if (location.href === 'http://localhost:3000/blatnoi-nomer.html') {
+//   // усдовие на breakpoint
+//   headerTitle.style.fontSize = `30px`;
+//   headerTitle.style.lineHeight = `45px`;
+//   headerTitle.textContent = `Мы предлагаем нашим клиентам помощь с официальной регистрацией красивых номеров на любые транспортные средства`;
+//   headerText.textContent = `На первый взгляд процедура продажи или номеров может вызвать сложности, но благодаря большому профессионализму каждого сотрудника, мы гарантируем быстрый результат. Стоймость красивого номера зависит от вашего пожелания.`;
+// };
+

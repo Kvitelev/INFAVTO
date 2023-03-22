@@ -103,12 +103,13 @@
   }
 }
 
-.header__content {
+.header__slider {
   position: absolute;
-  width: 290px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 290px;
+  margin: 0;
   @include breakpoint690 {
     width: 400px;
   }
@@ -122,6 +123,10 @@
   @include desktop {
     width: 650px;
   }
+}
+
+.header__content {
+  width: 100%;
 }
 
 .header__title {

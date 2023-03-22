@@ -1,12 +1,9 @@
 .about-us {
-  @include margin-bottom-50;
-  @include tablet {
-    @include margin-bottom-100;
-  }
+  @include margin-bottom-100;
 }
 
 .about-us__title {
-  @include margin-bottom-20;
+  @include margin-bottom-50;
 }
 
 .about-us__introduction {

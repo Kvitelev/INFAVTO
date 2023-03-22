@@ -1,15 +1,9 @@
 .reviews {
-  @include margin-bottom-50;
-  @include tablet {
-    @include margin-bottom-100;
-  }
+  @include margin-bottom-100;
 }
 
 .reviews__title {
-  @include margin-bottom-20;
-  @include tablet {
-    @include margin-bottom-50;
-  }
+  @include margin-bottom-50;
 }
 
 .reviews__slider {

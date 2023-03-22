@@ -1,5 +1,8 @@
 .coolNumber-doc {
   @include margin-bottom-50;
+  @include tablet {
+    @include margin-bottom-100;
+  }
 }
 
 .coolNumber-doc__title {
@@ -9,58 +12,61 @@
   }
 }
 
-.coolNumber-doc__content {
-  @include breakpoint690 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-}
-
 .coolNumber-doc__list {
-  @include margin-bottom-20;
+  @include flex-all-center;
+  flex-direction: column;
+  gap: 20px;
   counter-reset: numbering;
-  &:not(:nth-child(1)){
-    counter-reset: none;
-  }
   @include tablet {
-    @include margin-bottom-50;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  @include desktop {
+    gap: 0;
+    justify-content: space-between;
   }
 }
 
 .coolNumber-doc__item {
+  @include flex;
+  flex-direction: column;
+  justify-content: end;
   position: relative;
-  width:300px;
-  padding-left: 40px;
+  width: 250px;
+  height: 250px;
+  border: 2px solid $orange;
+  border-radius: 20px;
   counter-increment: numbering;
-  @include margin-bottom-20;
-  &:last-child {
-    margin-bottom: 0;
-  }
+  padding: 20px 10px;
+  text-align: center;
   &::before {
-    content: counter(numbering);
-    @include flex-all-center;
+    content: '№'counter(numbering);
     position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    border: 2px solid $orange;
-    width: 30px;
-    height: 30px;
-    background-color: $black-bg;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+  }
+  &:nth-child(1) {
+    background: url(../img/svg/cool-number-doc-1.svg) center / 80px no-repeat $black-bg;
+  }
+  &:nth-child(2) {
+    background: url(../img/svg/cool-number-doc-2.svg) center / 80px no-repeat $black-bg;
+  }
+  &:nth-child(3) {
+    background: url(../img/svg/cool-number-doc-3.svg) center / 80px no-repeat $black-bg;
+  }
+  &:nth-child(4) {
+    background: url(../img/svg/cool-number-doc-4.svg) center / 80px no-repeat $black-bg;
   }
   @include tablet {
-    width: 350px;
-    padding-left: 70px;
-    @include margin-bottom-50;
-    &::before {
-      width: 50px;
-      height: 50px;
-
-    }
+    width: 300px;
+    height: 300px;
   }
   @include desktop {
-    width: 570px;
+    font-size: 17px;
+    line-height: 18px;
+    width: 270px;
+    height: 270px;
   }
 }

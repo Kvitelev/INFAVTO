@@ -5,37 +5,62 @@
 .production-numbers__title {
   @include margin-bottom-20;
   &-second {
+    margin: 0;
+    @include margin-bottom-20;
     color: $orange;
-    margin-bottom: 20px;
+  }
+  @include breakpoint690 {
+    &-second {
+      text-align: start;
+      &::after {
+        content: ":";
+      }
+    }
+  }
+  @include tablet {
+    &-second {
+      font-size: 25px;
+    }
+  }
+  @include desktop {
+    &-second {
+      font-size: 35px;
+    }
   }
 }
 
 .production-numbers__content {
   @include margin-bottom-50;
-  &--center {
-    text-align: center;
-  }
 }
 
 .production-numbers__description {
-  @include margin-bottom-20;
+  @include margin-bottom-50;
   &--bg {
     min-height: 250px;
     background-image: url(../img/catalog/production-numbers-1.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100% 110px;
-    @include breakpoint690 {
+  }
+  &-second {
+    text-align: center;
+    @include margin-bottom-50;
+  }
+  @include breakpoint690 {
+    &--bg {
       min-height: 300px;
       background-size: 80% 170px;
     }
-    @include breakpoint1140 {
-      background-size: 50% 210px;
-    }
   }
-  &--second {
-    margin-bottom: 5px;
+  @include breakpoint1140 {
+    min-height: 300px;
+    background-size: 50% 210px;
   }
+}
+
+.production-numbers__strong {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .production-numbers__item {
@@ -57,10 +82,50 @@
     background-repeat: no-repeat;
     background-size: 12px 16px;
   }
+  &--second {
+    padding-left: 0;
+    padding-top: 25px;
+    text-align: center;
+    @include margin-bottom-20;
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+  }
+  @include breakpoint690 {
+    &--second {
+      padding-left: 30px;
+      padding-top: 0;
+      text-align: start;
+      &::after {
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+  @include tablet {
+    &--second {
+      width: 700px;
+    }
+  }
+  @include desktop {
+    &--second {
+      width: 1000px;
+    }
+  }
 }
 
-.production-numbers__strong {
+.production-numbers__link {
   display: block;
-  font-weight: 400;
-  margin-bottom: 10px;
+  &:hover {
+    color: $orange;
+  }
+  &:active {
+    @include opacity-7;
+  }
 }

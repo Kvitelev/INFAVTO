@@ -48,6 +48,8 @@ const paths = {
     webp: sourceFolder + '/img/**/*.{jpg,png}',
     sprite: sourceFolder + '/img/svg/sprite/*.svg',
     fonts:sourceFolder + '/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}',
+    pdf:sourceFolder + '/pdf/*.pdf',
+    icon:sourceFolder + '/favicon.ico',
   },
   build: {
     styles: projectFolder + '/css/',
@@ -55,6 +57,7 @@ const paths = {
     img: projectFolder + '/img/',
     sprite: projectFolder + '/img/svg/',
     fonts: projectFolder + '/fonts/',
+    pdf:projectFolder + '/pdf/',
   },
   watch: {
     html: sourceFolder + '/html/**/*.html',
@@ -62,6 +65,7 @@ const paths = {
     scripts: sourceFolder + '/js/**/*.js',
     img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
     fonts:sourceFolder + '/fonts/',
+    pdf:sourceFolder + '/pdf/',
   },
 }
 
@@ -94,7 +98,7 @@ const html = () => {
         collapseWhitespace: true
     }))
     .pipe(dest(projectFolder))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
 }
 
 // Обработка стилей
@@ -192,6 +196,18 @@ const fonts = () => {
     .pipe(dest(paths.build.fonts))
 }
 
+// Копирование pdf
+const pdf = () => {
+  return src(paths.src.pdf)
+    .pipe(dest(paths.build.pdf))
+}
+
+// Копирование icon
+const icon = () => {
+  return src(paths.src.icon)
+    .pipe(dest(projectFolder))
+}
+
 // Наблюдение
 const watcher = () => {
   watch(paths.watch.html, html);
@@ -199,12 +215,13 @@ const watcher = () => {
   watch(paths.watch.scripts, script);
   watch(paths.watch.img, images);
   watch(paths.watch.fonts, fonts);
+  watch(paths.watch.pdf, pdf);
 }
 
 // Сборка задач
 const start = series(
   clean,
-  parallel (html, style, styleLibs, script, createWebp, fonts, sprite)
+  parallel (html, style, styleLibs, script, createWebp, fonts, sprite, pdf, icon)
 )
 
 const build = series(

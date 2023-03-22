@@ -1,7 +1,11 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
   &:hover {
     transition: all 0.3s;
+  }
+  &:focus {
+    outline: 1px solid $orange;
   }
 }
 
@@ -170,19 +174,15 @@ dd {
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    width: 10px;
-    height: 10px;
+    transform: translate(0, -50%);
+    width: 15px;
+    height: 15px;
     background-image: url(../img/svg/sprite/tick.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10px 10px;
-    @include tablet {
-      width: 20px;
-      height: 20px;
-      background-size: 20px 20px;
-    }
+    background-size: 15px 15px;
   }
 }
 
@@ -190,18 +190,18 @@ dd {
   text-transform: uppercase;
 }
 
-.animation-1 {
+.animation-left {
   animation: ainimation-left 2s;
-}
-
-.animation-2 {
-  animation: ainimation-top 2s;
 }
 
 @keyframes ainimation-left {
   0% {
     transform: translate(-100%);
   }
+}
+
+.animation-top {
+  animation: ainimation-top 2s;
 }
 
 @keyframes ainimation-top {
@@ -211,6 +211,29 @@ dd {
   }
   100% {
     background-color: rgba($black, 0.8);
+  }
+}
+
+.ainimation-popup {
+  animation: ainimation-popup 2s;
+}
+
+@keyframes ainimation-popup {
+  0% {
+    transform: translate(100%, -50%);
+  }
+}
+
+.ainimation-product-cart {
+  animation: ainimation-product-cart 1s;
+}
+
+@keyframes ainimation-product-cart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

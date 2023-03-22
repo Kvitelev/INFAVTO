@@ -1,5 +1,5 @@
 .services {
-  @include margin-bottom-50;
+  @include margin-bottom-100;
 }
 
 .services__title {
@@ -12,18 +12,14 @@
     min-height: 50px;
     color: $orange;
   }
-  @include desktop {
-    &-second {
-      font-size: 32px;
-      line-height: 32px;
-    }
-  }
 }
 
 .services__list {
   @include flex-all-center;
   flex-direction: column;
-  gap: 50px;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 100px;
   &-second {
     @include flex-h-center;
     flex-direction: column;
@@ -35,22 +31,8 @@
     flex-direction: row;
   }
   @include tablet {
-    &-second {
-      max-width: 300px;
-      min-height: 480px;
-    }
-  }
-  @include breakpoint1140 {
-    column-gap: 100px;
-  }
-  @include desktop {
-    column-gap: 200px;
-    &-second {
-      @include flex-h-center;
-      flex-direction: column;
-      max-width: 350px;
-      min-height: 550px;
-    }
+    justify-content: space-around;
+    column-gap: 0;
   }
 }
 
@@ -84,30 +66,21 @@
   }
   &-second {
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px;
     @include margin-bottom-20;
     &:last-child {
       margin-bottom: 0;
     }
   }
   @include tablet {
-    &::before {
-      width: 375px;
-      height: 785px;
-      background-size: 375px 785px;
-    }
-    &::after {
-      background-size: 90px 20px;
-    }
     &-second {
-      padding-left: 30px;
+      font-size: 15px;
+      line-height: 18px;
     }
   }
   @include desktop {
-    &::before {
-      width: 475px;
-      height: 840px;
-      background-size: 475px 840px;
+    &-second {
+      font-size: 17px;
     }
   }
 }
@@ -121,22 +94,13 @@
   background-color: $black-bg;
   border-radius: 40px;
   box-shadow: 0 20px 20px $black;
-  @include tablet {
-    width: 350px;
-    padding: 60px 15px;
-    min-height: 750px;
-  }
-  @include desktop {
-    width: 450px;
-    padding: 60px 40px;
-    min-height: 800px;
-    border-radius: 50px;
-  }
 }
 
 .services__btn-link {
+  @include flex-all-center;
   position: relative;
   z-index: 1;
+  width: 100%;
   min-height: 50px;
-  padding: 10px 100px;
+  padding: 10px;
 }

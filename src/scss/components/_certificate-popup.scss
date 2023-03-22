@@ -40,13 +40,3 @@
   width: 250px;
   min-height: 50px;
 }
-
-.ainimation-popup {
-  animation: ainimation-popup 2s;
-}
-
-@keyframes ainimation-popup {
-  0% {
-    transform: translate(100%, -50%);
-  }
-}

@@ -2,25 +2,30 @@
   @include margin-bottom-50;
   background-color: $black-bg;
   padding: 25px 0;
+  @include tablet {
+    @include margin-bottom-100;
+  }
 }
 
 .coolNumber-slider__list {
   padding: 0;
 }
 
-.coolNumber-slider__img {
-  display: block;
+.coolNumber-slider__item {
   width: 250px;
   height: 250px;
-  margin: auto;
-  @include breakpoint690 {
-    width: 350px;
+  @include tablet {
+    height: 300px;
+  }
+  @include desktop {
     height: 350px;
   }
-  @include tablet {
-    width: 400px;
-    height: 400px;
-  }
+}
+
+.coolNumber-slider__img {
+  display: block;
+  height: 100%;
+  object-fit: fill;
 }
 
 .coolNumber-slider__btn {

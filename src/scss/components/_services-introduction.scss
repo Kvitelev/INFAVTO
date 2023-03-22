@@ -1,5 +1,8 @@
 .services-introduction {
   @include margin-bottom-50;
+  @include tablet {
+    @include margin-bottom-100;
+  }
 }
 
 .services-introduction__title {

@@ -39,6 +39,7 @@
 .products-card__img {
   width: 250px;
   height: 150px;
+  object-fit: cover;
 }
 
 .products-card__tagging {
@@ -93,5 +94,60 @@
   & span {
     font-size: 10px;
     color: $orange;
+  }
+}
+
+.products-card__tip {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  font-size: 8px;
+  color: $white;
+  text-transform: uppercase;
+  background-color: rgba($black, 0.7);
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid $orange;
+  transform: rotate(-20deg);
+  background-image: url(../img/svg/stars.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 80%;
+  background-size: 30px 10px;
+  &:hover {
+    color: $orange;
+  }
+  &:active {
+    @include opacity-7;
+  }
+  @include desktop {
+    font-size: 10px;
+    width: 60px;
+    height: 60px;
+    background-size: 35px 15px;
+    left: 3%;
+  }
+}
+
+.products-card__popup {
+  display: none;
+  position: absolute;
+  top: 40.7%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  background-color: rgba($black, 0.8);
+  font-size: 13px;
+  line-height: 15px;
+  width: 251px;
+  min-height: 150px;
+  &-text {
+    padding: 0 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
 }

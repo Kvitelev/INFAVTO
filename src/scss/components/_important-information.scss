@@ -32,6 +32,7 @@
   }
   @include tablet {
     min-height: 500px;
+    @include margin-bottom-100;
     &::before {
       width: 200px;
       height: 100px;
@@ -44,7 +45,6 @@
     }
   }
   @include desktop {
-    // min-height: 550px;
     &::before {
       width: 250px;
       height: 150px;
