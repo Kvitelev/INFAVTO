@@ -13,3 +13,25 @@
 @mixin margin-bottom-100 {
   margin-bottom: 100px;
 }
+
+@mixin btn-popup {
+  position: absolute;
+  font-size: 10px;
+  color: $white;
+  background-color: rgba($black, 0.7);
+  border-radius: 50%;
+  border: 2px solid $orange;
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  background-image: url(../img/svg/stars.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 80%;
+  background-size: 38px 11px;
+  &:hover {
+    color: $orange;
+  }
+  &:active {
+    @include opacity-7;
+  }
+}

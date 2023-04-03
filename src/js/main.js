@@ -2,27 +2,32 @@
 const options = {
   slidesPerView: 1,
   spaceBetween: 30,
+  loop: true,
+  speed: 1000,
   autoplay: {
     delay: 6000,
     disableOnInteraction: false,
   },
 };
 
-if(location.href === 'http://localhost:3000/dublikat-gos-nomer.html') {
-  options.initialSlide = 1;
-  delete options.autoplay;
+switch (location.pathname) {
+  case '/dublikat-gos-nomer.html':
+    options.initialSlide = 1;
+    delete options.autoplay;
+  break;
+  case '/blatnoi-nomer.html':
+    options.initialSlide = 2;
+    delete options.autoplay;
+  break;
+  case '/help-gibdd.html':
+    options.initialSlide = 3;
+    delete options.autoplay;
+  break;
+  // case '/.html':
+  //   options.initialSlide = 4;
+  //   delete options.autoplay;
+  //   break;
 }
-else if (location.href === 'http://localhost:3000/blatnoi-nomer.html') {
-  options.initialSlide = 2;
-  delete options.autoplay;
-}
-else if (location.href === 'http://localhost:3000/help-gibdd.html') {
-  options.initialSlide = 3;
-  delete options.autoplay;
-}
-// else if (location.href === 'http://localhost:3000/dublikat-gos-nomer.html') {
-//   options.initialSlide = 4;
-// }
 
 const headerSwiper = new Swiper(".header__slider", options);
 
@@ -67,6 +72,7 @@ const reviewsSwiper = new Swiper(".reviews__slider", {
 const productionNumbersSwiper = new Swiper(".production-numbers__slider", {
   spaceBetween: 30,
   freeMode: true,
+  speed: 600,
   keyboard: {
     enabled: true,
   },
@@ -265,107 +271,34 @@ certificateClose.addEventListener('click', () => {
   certificatPopup.style.display = 'none';
 })
 
-// Всплывающие окно в карточке товара
+// Всплывающие окно в карточке товара c использованием делегирование событи
+const productsList = document.querySelector('.products-card__list');
 const tipBtns = document.querySelectorAll('.products-card__tip');
+const tipBtnsClose = document.querySelectorAll('.products-card__btn-close');
 const productsCardPopup = document.querySelectorAll('.products-card__popup');
 
-tipBtns[0].addEventListener('click', () => {
-  productsCardPopup[0].style.display = 'block';
-  tipBtns[0].style.display = 'none';
-  productsCardPopup[0].classList.add('ainimation-product-cart');
-})
-productsCardPopup[0].addEventListener('mouseout', () => {
-  productsCardPopup[0].style.display = 'none';
-  tipBtns[0].style.display = 'block';
-  tipBtns[0].classList.add('ainimation-product-cart');
-})
+const openPopupTip = (element, index) => {
+  productsCardPopup[index].style.display = 'block';
+  element.style.display = 'none';
+  productsCardPopup[index].classList.add('ainimation-product-cart');
+};
 
-tipBtns[1].addEventListener('click', () => {
-  productsCardPopup[1].style.display = 'block';
-  tipBtns[1].style.display = 'none';
-  productsCardPopup[1].classList.add('ainimation-product-cart');
-})
-productsCardPopup[1].addEventListener('mouseout', () => {
-  productsCardPopup[1].style.display = 'none';
-  tipBtns[1].style.display = 'block';
-  tipBtns[1].classList.add('ainimation-product-cart');
-})
+const closePopupTip = (index) => {
+  productsCardPopup[index].style.display = 'none';
+    tipBtns[index].style.display = 'block';
+    tipBtns[index].classList.add('ainimation-product-cart');
+};
 
-tipBtns[2].addEventListener('click', () => {
-  productsCardPopup[2].style.display = 'block';
-  tipBtns[2].style.display = 'none';
-  productsCardPopup[2].classList.add('ainimation-product-cart');
-})
-productsCardPopup[2].addEventListener('mouseout', () => {
-  productsCardPopup[2].style.display = 'none';
-  tipBtns[2].style.display = 'block';
-  tipBtns[2].classList.add('ainimation-product-cart');
-})
+productsList.addEventListener('click', (evt) => {
+  tipBtns.forEach((element, index) => {
+    if (evt.target === element) {
+      openPopupTip(element, index);
+    }
+  });
+});
 
-tipBtns[3].addEventListener('click', () => {
-  productsCardPopup[3].style.display = 'block';
-  tipBtns[3].style.display = 'none';
-  productsCardPopup[3].classList.add('ainimation-product-cart');
-})
-productsCardPopup[3].addEventListener('mouseout', () => {
-  productsCardPopup[3].style.display = 'none';
-  tipBtns[3].style.display = 'block';
-  tipBtns[3].classList.add('ainimation-product-cart');
-})
-
-tipBtns[4].addEventListener('click', () => {
-  productsCardPopup[4].style.display = 'block';
-  tipBtns[4].style.display = 'none';
-  productsCardPopup[4].classList.add('ainimation-product-cart');
-})
-productsCardPopup[4].addEventListener('mouseout', () => {
-  productsCardPopup[4].style.display = 'none';
-  tipBtns[4].style.display = 'block';
-  tipBtns[4].classList.add('ainimation-product-cart');
-})
-
-tipBtns[5].addEventListener('click', () => {
-  productsCardPopup[5].style.display = 'block';
-  tipBtns[5].style.display = 'none';
-  productsCardPopup[5].classList.add('ainimation-product-cart');
-})
-productsCardPopup[5].addEventListener('mouseout', () => {
-  productsCardPopup[5].style.display = 'none';
-  tipBtns[5].style.display = 'block';
-  tipBtns[5].classList.add('ainimation-product-cart');
-})
-
-tipBtns[6].addEventListener('click', () => {
-  productsCardPopup[6].style.display = 'block';
-  tipBtns[6].style.display = 'none';
-  productsCardPopup[6].classList.add('ainimation-product-cart');
-})
-productsCardPopup[6].addEventListener('mouseout', () => {
-  productsCardPopup[6].style.display = 'none';
-  tipBtns[6].style.display = 'block';
-  tipBtns[6].classList.add('ainimation-product-cart');
-})
-
-tipBtns[7].addEventListener('click', () => {
-  productsCardPopup[7].style.display = 'block';
-  tipBtns[7].style.display = 'none';
-  productsCardPopup[7].classList.add('ainimation-product-cart');
-})
-productsCardPopup[7].addEventListener('mouseout', () => {
-  productsCardPopup[7].style.display = 'none';
-  tipBtns[7].style.display = 'block';
-  tipBtns[7].classList.add('ainimation-product-cart');
-})
-
-// header content
-// const headerTitle = document.querySelector('.header__title');
-// const headerText = document.querySelector('.header__description');
-
-// if (location.href === 'http://localhost:3000/blatnoi-nomer.html') {
-//   // усдовие на breakpoint
-//   headerTitle.style.fontSize = `30px`;
-//   headerTitle.style.lineHeight = `45px`;
-//   headerTitle.textContent = `Мы предлагаем нашим клиентам помощь с официальной регистрацией красивых номеров на любые транспортные средства`;
-//   headerText.textContent = `На первый взгляд процедура продажи или номеров может вызвать сложности, но благодаря большому профессионализму каждого сотрудника, мы гарантируем быстрый результат. Стоймость красивого номера зависит от вашего пожелания.`;
-// };
-
+tipBtnsClose.forEach((btnColse, index) => {
+  btnColse.addEventListener('click', () => {
+    closePopupTip(index);
+  });
+});

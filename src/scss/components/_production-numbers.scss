@@ -60,13 +60,13 @@
 
 .production-numbers__strong {
   display: block;
-  margin-bottom: 10px;
+  @include margin-bottom-20;
 }
 
 .production-numbers__item {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
+  padding-left: 30px;
+  @include margin-bottom-20;
   &:last-child {
     margin-bottom: 0;
   }
@@ -76,24 +76,20 @@
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
-    width: 12px;
-    height: 16px;
+    width: 20px;
+    height: 25px;
     background-image: url(../img/svg/doc-item.svg);
     background-repeat: no-repeat;
-    background-size: 12px 16px;
+    background-size: contain;
   }
   &--second {
     padding-left: 0;
-    padding-top: 25px;
+    padding-top: 30px;
     text-align: center;
-    @include margin-bottom-20;
     &::after {
       top: 0;
       left: 50%;
       transform: translate(-50%, 0);
-      width: 20px;
-      height: 20px;
-      background-size: 20px 20px;
     }
   }
   @include breakpoint690 {

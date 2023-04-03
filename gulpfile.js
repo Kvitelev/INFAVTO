@@ -50,6 +50,7 @@ const paths = {
     fonts:sourceFolder + '/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}',
     pdf:sourceFolder + '/pdf/*.pdf',
     icon:sourceFolder + '/favicon.ico',
+    manifest:sourceFolder + '/manifest.webmanifest',
   },
   build: {
     styles: projectFolder + '/css/',
@@ -208,6 +209,12 @@ const icon = () => {
     .pipe(dest(projectFolder))
 }
 
+// Копирование manifest
+const manifest = () => {
+  return src(paths.src.manifest)
+    .pipe(dest(projectFolder))
+}
+
 // Наблюдение
 const watcher = () => {
   watch(paths.watch.html, html);
@@ -221,7 +228,7 @@ const watcher = () => {
 // Сборка задач
 const start = series(
   clean,
-  parallel (html, style, styleLibs, script, createWebp, fonts, sprite, pdf, icon)
+  parallel (html, style, styleLibs, script, createWebp, fonts, sprite, pdf, icon, manifest)
 )
 
 const build = series(

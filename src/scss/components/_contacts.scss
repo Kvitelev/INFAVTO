@@ -86,26 +86,9 @@
 }
 
 .contacts__btn-open {
-  position: absolute;
+  @include btn-popup;
   top: 5%;
   right: 5%;
-  width: 70px;
-  height: 70px;
-  font-size: 10px;
-  color: $white;
-  border: 2px solid $orange;
-  border-radius: 50%;
-  background-color: rgba($black, 0.8);
-  background-image: url(../img/svg/stars.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 80%;
-  background-size: 38px 11px;
-  &:hover {
-    color: $orange;
-  }
-  &:active {
-    color: rgba($orange, 0.8);
-  }
   @include tablet {
     display: none;
   }

@@ -4,9 +4,6 @@
   &:hover {
     transition: all 0.3s;
   }
-  &:focus {
-    outline: 1px solid $orange;
-  }
 }
 
 *::before,

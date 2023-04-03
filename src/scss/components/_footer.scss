@@ -12,14 +12,13 @@
 
 .footer__grid {
   display: grid;
-  grid-template-rows: 68px 1fr 13px;
+  grid-template-rows: 68px 1fr 1fr 13px;
   grid-template-columns: 1fr 1fr;
-  row-gap: 5px;
   @include breakpoint690 {
-    grid-template-rows: 100px 1fr 15px;
+    grid-template-rows: 100px 1fr 1fr 15px;
   }
   @include tablet {
-    grid-template-rows: 124px 1fr 20px;
+    grid-template-rows: 124px 1fr 1fr 20px;
     row-gap: 10px;
   }
 }
@@ -191,6 +190,20 @@
   @include desktop {
     font-size: 24px;
     line-height: 27px;
+  }
+}
+
+.footer__iframe {
+  border: none;
+  width: 150px;
+  height: 50px;
+  grid-row: 3/4;
+  grid-column: 2/3;
+  justify-self: end;
+  align-self: center;
+  margin: 5px 0;
+  @include desktop {
+    transform: scale(1.5) translate(-22px, 0);
   }
 }
 
